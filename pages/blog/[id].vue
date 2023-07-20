@@ -8,8 +8,8 @@ const abilities = computed(() => {
 })
 </script>
 <template>
-    Dynamisk side {{ id  }}s
-    <button @click="refresh">Refresh</button>
+    Dynamisk side {{ id }}s
+    <button @click="refresh()">Refresh</button>
     <div v-if="!pending">
         <div v-for="ability in abilities" :key="ability.slot">
             <Card :ability="ability.ability" @nameClicked="refresh"/>
