@@ -3,4 +3,6 @@
 </script>
 <template>
     <TheHeader/>
+    <TheContent/>
+    <TheHeader/>
 </template>
