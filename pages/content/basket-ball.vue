@@ -3,7 +3,7 @@
     import TheFooter from '../../components/partials/TheFooter.vue';
     import DifferentSports from '../../components/content/DifferentSports.vue';
 
-    const APIKey = "1adcd8e27bmsh079f7bf7c1d6bfdp15a67ajsn9e21a6ac31c1"
+
 
     const { id } = useRoute().params;
     const requestId = id as string || "";
