@@ -3,17 +3,17 @@
     import TheFooter from '../../components/partials/TheFooter.vue';
     import DifferentSports from '../../components/content/DifferentSports.vue';
 
-    const { id } = useRoute().params;
+    const id  = DifferentSports.key;
     const requestId = id as string || "";
 
-    const { data, pending, refresh } = await useAsyncData<any>(requestId, () => $fetch(`https://api-basketball.p.rapidapi.com`))
+    const { data, pending, refresh } = await useAsyncData(requestId, () => $fetch(`https://api-basketball.p.rapidapi.com/teams/${requestId}`))
 
-    const teams = () => {
+    const teams = computed(() => {
         return data
         
-    }
+    })
     
-    console.log(teams());
+    console.log(teams);
     
 
 </script>
