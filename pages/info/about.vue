@@ -1,8 +1,4 @@
 <script lang="ts" setup>
-    import TheHeader from '../../components/partials/TheHeader.vue';
-    import TheFooter from '../../components/partials/TheFooter.vue';
-    import AboutInfo from '../../components/info/AboutInfo.vue';
-
     const { id } = useRoute().params;
     const requestId = id as string || '';
 
@@ -11,7 +7,7 @@
 <template>
     <TheHeader />
     
-    <AboutInfo />
+    <AboutInfo :name="'Jonas'"/>
 
     <TheFooter/>
 </template>
