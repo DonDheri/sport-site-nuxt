@@ -9,8 +9,10 @@ import DifferentSports from '../components/content/DifferentSports.vue';
     });
 </script>
 <template>
+
     <TheHeader/>
     <TheContent/>
     <DifferentSports/>
     <TheFooter/>
+    
 </template>
