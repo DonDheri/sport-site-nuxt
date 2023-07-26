@@ -1,23 +1,16 @@
 <script setup lang="ts">
-    import TheHeader from '../../components/partials/TheHeader.vue';
-    import TheFooter from '../../components/partials/TheFooter.vue';
-    import DifferentSports from '../../components/content/DifferentSports.vue';
-
-
-
     const { id } = useRoute().params;
     const requestId = id as string || "";
-
-    const { data } = await useFetch(`https://api-basketball.p.rapidapi.com/teams?league=12&season=2019-2020`)
-
-    
-    console.log(data);
-    
+    const config = useRuntimeConfig();
+    const { data } = await useAsyncData(() => $fetch(`https://api-basketball.p.rapidapi.com/teams?league=12&season=2019-2020`, {
+        headers: {
+            'X-RapidAPI-Key': (config.public.apiKey as string) || ''
+        }
+    }))
 
 </script>
 
 <template>
-    <TheHeader/>
 
     <DifferentSports/>
 
@@ -27,5 +20,4 @@
         </div>
     </div>
 
-    <TheFooter/>
 </template>
