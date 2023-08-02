@@ -5,9 +5,8 @@
 </script>
 
 <template>
-    <TheHeader />
     
     <AboutInfo :name="'Jonas'"/>
+    <DifferentSports/>
 
-    <TheFooter/>
 </template>

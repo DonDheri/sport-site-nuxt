@@ -1,23 +1,22 @@
 <script setup lang="ts">
-    const { id } = useRoute().params;
-    const requestId = id as string || "";
-    const config = useRuntimeConfig();
-    const { data } = await useAsyncData(() => $fetch(`https://api-basketball.p.rapidapi.com/teams?league=12&season=2019-2020`, {
-        headers: {
-            'X-RapidAPI-Key': (config.public.apiKey as string) || ''
-        }
-    }))
-
+    import sports from "../../components/content/sports.js"
+    
 </script>
 
 <template>
 
     <DifferentSports/>
 
-    <div class="grid grid-cols-4 gap-5">
-        <div v-for="d in data">
-            <p>{{ d }}</p>
-        </div>
+    <div class="grid grid-cols-12 gap-5 border-2 p-5 rounded-xl">
+
+        <NuxtLink 
+        v-for="league in sports[0].leagues"
+        class="flex justify-center align-center bg-gradient-to-r from-blue-500 to-blue-600 rounded bg-zinc-600 text-white"
+        :to="`/content/basket-ball/${league.id}`"
+        >
+            {{ league.name }}
+        </NuxtLink>
+            
     </div>
 
 </template>

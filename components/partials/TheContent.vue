@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-  import DifferentSports from '../content/DifferentSports.vue';
   
 </script>
 <template>

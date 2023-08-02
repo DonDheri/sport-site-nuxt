@@ -7,8 +7,8 @@
     ]
 </script>
 <template>
-    <div class="absolute fixed bottom-0 w-full">
-        <div class="h-16 w-full bg-gradient-to-r from-cyan-600 to-blue-600">
+    <div class="fixed bottom-0 w-full">
+        <div class="fixed bottom-0 h-16 w-full bg-gradient-to-r from-cyan-600 to-blue-600">
             <div class="mx-6 grid grid-cols-2 gap-x-20 text-base font-semibold text-white text-2xl align-center pt-3">
                 <p class="mt-2 ">&copy; 2023 Lukas Lilholt</p>
                 <div class="mx-10 justify-self-end grid grid-cols-2 gap-x-8 text-base font-semibold text-white text-[20px] sm:grid-cols-2 md:flex lg:gap-x-10">

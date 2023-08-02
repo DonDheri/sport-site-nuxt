@@ -5,9 +5,8 @@
 </script>
 
 <template>
-    <TheHeader />
     
     <ContactInfo />
+    <DifferentSports/>
 
-    <TheFooter/>
 </template>
