@@ -2,7 +2,7 @@
 export default [
     {
         id: 1,
-        type: "Basket-Ball",
+        name: "Basket Ball",
         url:"basket-ball",
         active: false,
         content: "asdasd",
@@ -71,7 +71,7 @@ export default [
     },
     {
         id: 2,
-        type: "Hockey",
+        name: "Hockey",
         url:"hockey",
         active: false,
         content: "øæløæløæløæl",
@@ -79,7 +79,7 @@ export default [
     },
     {
         id: 3,
-        type: "Base-Ball",
+        name: "Base Ball",
         url:"base-ball",
         active: false,
         content: "yuiyui",
@@ -87,7 +87,7 @@ export default [
     },
     {
         id: 4,
-        type: "Foot-Ball",
+        name: "Foot Ball",
         url: "foot-ball",
         active: false,
         content: "qweqweq",
