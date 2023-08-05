@@ -3,7 +3,6 @@
     import sports from "@/components/content/sports.js"
     const { id } = useRoute().params;
     const requestId = id as string || "";
-    const basketBall = sports[0];
 
     const config = useRuntimeConfig();
     const { data } = await useAsyncData("requestId", () => $fetch(`https://api-basketball.p.rapidapi.com/leagues`, {
@@ -19,21 +18,14 @@
     // const leagues = computed(() => {
     //     return data?.value.leagues;
     // })
-    console.log(requestId);
+        
 
 </script>
 
 <template>
-    <div class="grid grid-cols-12 gap-5 border-2 p-5 mx-48 rounded-xl overflow-x-scoll">
+    
+    <DifferentSports/>
 
-        <NuxtLink 
-            v-for="sport in sports"
-            
-            class="flex justify-center align-center bg-gradient-to-r from-blue-500 to-blue-600 rounded bg-zinc-600 text-white"
-            :to="`/content/${sport.url}/${sport.id}`"
-            >
-            {{ sport.id }}
-        </NuxtLink>
-        
-    </div>
+    <DifferentLeagues/>
+
 </template>

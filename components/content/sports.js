@@ -1,7 +1,7 @@
 
 export default [
     {
-        id: 1,
+        id: 0,
         name: "Basket Ball",
         url:"basket-ball",
         active: false,
@@ -67,10 +67,10 @@ export default [
                     {season: '2008-2009', start: '2008-10-09', end: '2009-06-15'},
                 ]
             },
-        ]
+        ],
     },
     {
-        id: 2,
+        id: 1,
         name: "Hockey",
         url:"hockey",
         active: false,
@@ -78,7 +78,7 @@ export default [
         text: "NHL",
     },
     {
-        id: 3,
+        id: 2,
         name: "Base Ball",
         url:"base-ball",
         active: false,
@@ -86,7 +86,7 @@ export default [
         text: "MLB",
     },
     {
-        id: 4,
+        id: 3,
         name: "Foot Ball",
         url: "foot-ball",
         active: false,
