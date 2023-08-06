@@ -1,6 +1,5 @@
 <script setup lang="ts">
 
-    import sports from "@/components/content/sports.js"
     const { id } = useRoute().params;
     const requestId = id as string || "";
 
@@ -10,10 +9,6 @@
             'X-RapidAPI-Key': (config.public.apiKey as string) || '',
             'X-RapidAPI-Host': 'api-basketball.p.rapidapi.com'
         },
-        params: {
-            id: requestId,
-            
-        }
     }))
     // const leagues = computed(() => {
     //     return data?.value.leagues;
@@ -27,5 +22,7 @@
     <DifferentSports/>
 
     <DifferentLeagues/>
+
+    <ShowData/>
 
 </template>

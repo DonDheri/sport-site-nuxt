@@ -1,5 +1,5 @@
 
-export default [
+export const sports = [
     {
         id: 0,
         name: "Basket Ball",
@@ -76,16 +76,16 @@ export default [
         active: false,
         content: "øæløæløæløæl",
         text: "NHL",
-    },
-    {
+        },
+        {
         id: 2,
         name: "Base Ball",
         url:"base-ball",
         active: false,
         content: "yuiyui",
         text: "MLB",
-    },
-    {
+        },
+        {
         id: 3,
         name: "Foot Ball",
         url: "foot-ball",

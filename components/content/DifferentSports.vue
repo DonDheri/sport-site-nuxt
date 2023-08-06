@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import sports from "./sports.js";
+    import { sports }  from "@/components/content/Sports.js"
     const { id } = useRoute().params;
     const requestId = id as string || "";
     const currentSport = sports[Number(requestId)];
@@ -7,8 +7,8 @@
 </script>
 
 <template>
-    <div class="border-2 mx-48 grid grid-rows-2 overflow-x-scroll px-10 rounded-xl my-6">
-        <p class="justify-self-center text-2xl font-medium border-b-2 w-full mb-5 p-5 text-center">Different Sports</p>
+    <div class="border-2 mx-48 grid grid-rows-2 overflow-x-scroll rounded-xl my-6">
+        <p class="justify-self-center text-2xl font-medium border-b-2 w-full mb-5 p-5 text-center">Sports</p>
         <div>
             <button
                 v-for="(sport) in sports"
