@@ -2,18 +2,18 @@
 export const sports = [
     {
         id: 0,
-        name: "Basket Ball",
+        title: "Basket Ball",
         url:"basket-ball",
         active: false,
         content: "asdasd",
         leagues: [
             {
                 id: 34,
-                name:"Basketligaen",
+                title:"Basketligaen",
                 type:"League",
                 country: {
                     id: 13,
-                    name:"Denmark",
+                    title:"Denmark",
                     code:"DK",
                     flag:"https://media.api-football.com/flags/dk.svg"
                 },
@@ -27,11 +27,11 @@ export const sports = [
             },
             {
                 id: 12,
-                name:"NBA",
+                title:"NBA",
                 type:"League",
                 country: {
                     id: 5,
-                    name:"USA",
+                    title:"USA",
                     code:"US",
                     flag:"https://media-3.api-sports.io/flags/us.svg"
                 },
@@ -71,7 +71,7 @@ export const sports = [
     },
     {
         id: 1,
-        name: "Hockey",
+        title: "Hockey",
         url:"hockey",
         active: false,
         content: "øæløæløæløæl",
@@ -79,7 +79,7 @@ export const sports = [
         },
         {
         id: 2,
-        name: "Base Ball",
+        title: "Base Ball",
         url:"base-ball",
         active: false,
         content: "yuiyui",
@@ -87,7 +87,7 @@ export const sports = [
         },
         {
         id: 3,
-        name: "Foot Ball",
+        title: "Foot Ball",
         url: "foot-ball",
         active: false,
         content: "qweqweq",
