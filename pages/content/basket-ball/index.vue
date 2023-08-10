@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import { sports } from '@/components/content/sports';
+    import { sports } from '@/components/content/Sports';
     const { id } = useRoute().params;
     const requestId = id as string || "";
     const currentSport = sports[Number(requestId)];
@@ -8,8 +8,11 @@
 
 <template>
 
-    <DifferentOptions/>
+    <DifferentOptions
+    :url="currentSport"
+    :title="currentSport.title"
+    :id="currentSport.id"
+    />
     
-    <DifferentOptions/>
 
 </template>

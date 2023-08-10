@@ -1,24 +1,30 @@
-<script setup lang="ts">
+<script lang="ts" setup>
     import { sports } from '@/components/content/Sports';
     const { id } = useRoute().params;
     const requestId = id as string || "";
     const currentSport = sports[Number(requestId)];
-    const currentLeague = currentSport.leagues?.[Number(requestId)];
-    console.log();
+    
+
+    
+    
+
+
+
+
+
+    useServerHeadSafe({
+        title: 'Sport Site'
+    });
+    
     
 </script>
-
 <template>
+
+    <TheContent/>
     <DifferentOptions
     :url="currentSport.url"
     :title="currentSport.title"
     :id="currentSport.id"
     />
-    
 
-    <div class="border-2 mx-48 grid grid-rows-2 px-10 rounded-xl my-6">
-        <div class="grid grid">
-
-        </div>
-    </div>
 </template>
