@@ -20,7 +20,6 @@
 </script>
 <template>
 
-    <TheContent/>
     <DifferentOptions
     :sports="
         {
@@ -31,4 +30,12 @@
         "
     />
 
+    <DifferentOptions
+    :sports.leagues="
+        {
+            id: currentSport.leagues[Number(requestId)].id,
+            title: currentSport.title,
+            url: currentSport.url
+        }
+    "/>
 </template>

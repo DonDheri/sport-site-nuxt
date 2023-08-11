@@ -4,8 +4,6 @@ export const sports = [
         id: 0,
         title: "Basket Ball",
         url:"basket-ball",
-        active: false,
-        content: "asdasd",
         leagues: [
             {
                 id: 34,
@@ -73,24 +71,18 @@ export const sports = [
         id: 1,
         title: "Hockey",
         url:"hockey",
-        active: false,
-        content: "øæløæløæløæl",
         text: "NHL",
         },
         {
         id: 2,
         title: "Base Ball",
         url:"base-ball",
-        active: false,
-        content: "yuiyui",
         text: "MLB",
         },
         {
         id: 3,
         title: "Foot Ball",
         url: "foot-ball",
-        active: false,
-        content: "qweqweq",
         text: "NFL"  
     },
 ]
