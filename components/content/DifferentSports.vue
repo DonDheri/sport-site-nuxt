@@ -1,23 +1,14 @@
 <script setup lang="ts">
-    // import { sports } from "./Sports.js"
-    // const { id } = useRoute().params;
-    // const requestId = id as string || "";
-    // const currentSport = sports[Number(requestId)];
+    import { sports } from "./Sports.js"
+    const { id } = useRoute().params;
+    const requestId = id as string || "";
+    const currentSport = sports[Number(requestId)];
 
 </script>
 
 <template>
-    <!-- <div class="border-2 mx-48 grid grid-rows-2 overflow-x-scroll rounded-xl my-6">
-        <p class="justify-self-center text-2xl font-medium border-b-2 w-full mb-5 p-5 text-center">Sports</p>
-        <div>
-            <button
-                v-for="(sport) in sports"
-                class="bg-gradient-to-r from-blue-500 to-blue-600 rounded px-5 py-2 bg-zinc-600 mx-6 text-white"
-                >
-                <NuxtLink :to="`/content/${sport.id}`">{{ sport.title }}</NuxtLink>
-            </button>
-        </div>
-
-    </div> -->
-    <h1>1</h1>
+    <div class="border-2 mx-48 grid grid-cols-12 grid-rows-2 gap-5 overflow-x-scroll px-10 pb-5 rounded-xl my-6">
+        <p class="justify-self-center col-span-12 text-2xl font-medium border-b-2 w-full p-5 mb-5 text-center">Sports</p>
+        <NuxtLink v-for="(sport) in sports" class="flex items-center justify-center col-span-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded bg-zinc-600 text-l font-medium text-white my-5" :key="sport.id" :to="`/content/${sport.url}`">{{ sport.title }}</NuxtLink>
+    </div>
 </template>

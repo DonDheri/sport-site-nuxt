@@ -33,7 +33,5 @@
 </script>
 
 <template>
-    <button class="btn col-span-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded bg-zinc-600 text-l font-medium text-white my-5">
-        <NuxtLink :to="`/content/${props.sports.id}`">{{ props.sports.title }}</NuxtLink>
-    </button>
+        <NuxtLink class="flex items-center justify-center col-span-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded bg-zinc-600 text-l font-medium text-white my-5" :to="`/content/${props.sports.url}`">{{ props.sports.title }}</NuxtLink>
 </template>

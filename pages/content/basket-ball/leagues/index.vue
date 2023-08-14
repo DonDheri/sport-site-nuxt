@@ -19,12 +19,6 @@
     
 </script>
 <template>
-
-    <TheContent/>
-    <DifferentOptions
-    :url="currentSport.url"
-    :title="currentSport.title"
-    :id="currentSport.id"
-    />
-
+    <DifferentSports/>    
+    <DifferentLeagues/>
 </template>
