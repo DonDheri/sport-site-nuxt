@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import { sports } from "./Sports.js"
+    import {sports} from "./Sports.mjs"
     const { id } = useRoute().params;
     const requestId = id as string || "";
     const currentSport = sports[Number(requestId)];

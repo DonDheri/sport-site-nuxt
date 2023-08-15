@@ -6,7 +6,8 @@
 
 <template>
 
-    <DifferentOptions/>
+    <DifferentSports/>
+    
     
     
 
