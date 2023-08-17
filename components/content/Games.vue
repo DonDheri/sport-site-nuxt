@@ -2,32 +2,36 @@
     import {sports} from "./Sports.mjs"
     function whichSport() {
         for (let sport of sports) {
-            if (useRoute()) {
+            if (useRoute().path.includes(sport.url)) {
                 return sport;
             }
         }
     }
-
+    function d() {
+        const d = new Date().toISOString();
+        const date = d.slice(0,10)
+        return date;
+    }
+    const date = d();
     const currentSport = whichSport();
     
     const { id } = useRoute().params;
     const requestId = id as string || "";
     const config = useRuntimeConfig();
-    const { data, } = await useAsyncData<any>(() => $fetch(`https://api-basketball.p.rapidapi.com/games/`, {
+    const { data, } = await useAsyncData<any>(() => $fetch(`https://api-basketball.p.rapidapi.com/games`, {
+        method: "GET",
         headers: {
             'X-RapidAPI-Key': (config.public.apiKey as string) || '',
             'X-RapidAPI-Host': 'api-basketball.p.rapidapi.com'
         },
         params: {
-            season: "2019-2020",
-            league: requestId,
-            
+            date: date
         },
     }))
 
-    const matches = computed(() => {
-        return data.value?.response;
-    })
+    const matches = data.value?.response;
+    
+    console.log(matches);
     
     
 </script>

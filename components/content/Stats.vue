@@ -1,5 +1,10 @@
 <script setup lang="ts">
 
+    const d = new Date()
+    const year = d.getFullYear();
+    const month = d.getMonth();
+    const day = d.getDate();
+    
     const { id } = useRoute().params;
     const requestId = id as string || "";
     const config = useRuntimeConfig();
@@ -9,8 +14,7 @@
             'X-RapidAPI-Host': 'api-basketball.p.rapidapi.com'
         },
         params: {
-            season: "2019-2020",
-            id: requestId,
+            season: `${(year-1).toString()}-${year.toString()}`,
             
         },
     }))
@@ -18,14 +22,33 @@
     const matches = computed(() => {
         return data.value?.response;
     })
-    console.log(matches.value);
+    function m() {
+        for (let match in matches.value) {
+            return match;
+        }
+    }
+    const match = m()
+    console.log(match);
     
-
+    
 </script>
 
 <template>
-    <div class="text-center border-2 mx-48 grid grid-cols-6 gap-3 px-3 rounded-xl my-6">
+    <div class="text-center border-2 mx-48 grid grid-cols-12 grid-rows-2 gap-3 px-3 rounded-xl my-6">
+
+        <NuxtLink
         
-        <p>{{  }}</p>
+        
+        class=""
+        >{{ match }}
+        </NuxtLink>
+        
+        <p class="text-2xl font-medium w-full">vs</p>
+        
+
+
+        <div class="">
+
+        </div>
     </div>
 </template>

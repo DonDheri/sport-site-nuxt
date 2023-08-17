@@ -6,5 +6,5 @@
 
     <DifferentSports/>
 
-    <DifferentLeagues/>
+    <Games/>
 </template>
