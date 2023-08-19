@@ -7,12 +7,10 @@
             }
         }
     }
-    function d() {
-        const d = new Date().toISOString();
-        const date = d.slice(0,10)
-        return date;
+    function d(date: string | any[]) {
+        return date.slice(0,10);
     }
-    const date = d();
+    const date = d(new Date().toISOString());
     const currentSport = whichSport();
     
     const { id } = useRoute().params;
@@ -31,37 +29,37 @@
 
     const matches = data.value?.response;
     
-    console.log(matches);
-    
-    
 </script>
 
 <template>
 
 
-    <div class="text-center border-2 mx-48 grid grid-cols-6 gap-3 px-3 rounded-xl my-6">
+    <div class="text-center border-2 mx-48 grid grid-cols-4 gap-3 px-3 rounded-xl my-6">
         
-        <p class="col-span-6 text-2xl font-medium border-b-4 w-full p-5 mb-5 text-center">Matches</p>
+        <p class="col-span-4 text-2xl font-medium border-b-4 p-5 mb-5 text-center">Matches</p>
         
         <NuxtLink
             v-for="match in matches"
-            :to="`/content/${currentSport?.url}/matches/match/${match.id}`"
-            class="rounded-xl border-2 p-5 flex flex-col justify-center items-center"
+            :to="`/content/${currentSport?.url}/matches/${match.id}`"
+            class="rounded-xl border-2 p-5 grid grid-cols-6 grid-rows-2 justify-center items-center"
         >
-            <div class="flex flex-col">
-                <p class="text-center text-xl mb-4">
-                    {{ match.teams.home.name }}
-                </p>
-                <img class="h-[100px] w-[100px]" :src="match.teams.home.logo" alt="home team logo">
-            </div>
-
-            <p class="text-4xl font-medium my-10 border-y-2 text-center w-full pb-2">vs</p>
-            
-            <div class="flex flex-col justify-center">
-                <img class="mb-3 h-[150px] w-[150px]" :src="match.teams.away.logo" alt="away team logo">
-                <p class="text-center text-xl">
-                    {{ match.teams.away.name }}
-                </p>
+            <p class="text-2xl text-center col-span-6 row-span-2">{{ match.time }}</p>
+            <div class="col-span-6 flex flex-row">
+                <div class="flex flex-col">
+                    <p class="text-center text-xl mb-4">
+                        {{ match.teams.home.name }}
+                    </p>
+                    <img class="h-[100px] w-[100px]" :src="match.teams.home.logo" alt="home-team logo">
+                </div>
+                
+                <p class="text-4xl font-medium my-10 border-x-2 text-center px-1 mx-5 pb-2">vs</p>
+                
+                <div class="flex flex-col justify-center">
+                    <p class="text-center text-xl mb-4">
+                        {{ match.teams.away.name }}
+                    </p>
+                    <img class="h-[100px] w-[100px]" :src="match.teams.away.logo" alt="away-team logo">
+                </div>
             </div>
         </NuxtLink>
     </div>

@@ -16,5 +16,10 @@ export default defineNuxtConfig({
       '~/components/info',
       '~/components/partials',
     ]
+  },
+  build: {
+    transpile: [
+      "@vuepic/vue-datepicker"
+    ]
   }
 })
