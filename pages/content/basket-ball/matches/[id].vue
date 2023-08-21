@@ -30,6 +30,7 @@
     }
     
     const currentMatch = whichMatch();
+    console.log(currentMatch);
     
 </script>
 
@@ -51,18 +52,42 @@
                 <p>{{ currentMatch.country.name }}</p>
             </div>
         </div>
-        <div
-        v-for="team in currentMatch.teams"
-        class="border-2 p-2 rounded-xl justify-center flex flex-col col-span-1">
-            <p class="text-3xl mb-5 underline">{{ team.name }}</p>
+        <div class="border-2 p-2 rounded-xl justify-center flex flex-col place-items-center col-span-1">
+            <p class="text-3xl mb-5 underline">{{ currentMatch.teams.home.name }}</p>
             <div class="pb-3 place-self-center object-center">
-                <img class="object-fill h-[200px]" :src="team.logo" alt="away-team logo">
+                <img class="object-fill h-[200px]" :src="currentMatch.teams.home.logo" alt="away-team logo">
             </div>
-            <ul class="text-2xl grid grid-cols-2 grid-rows-5">
-                <li>Quarter</li>
-                <li>Points</li>
+            <div class="flex flex-row border-2 rounded-xl">
+                <ul class="text-2xl flex flex-col mx-10">
+                    <p class="border-b-2">Quarter</p>
+                    <li v-for="score, index in currentMatch.scores.home">{{ index.toString()[0].toUpperCase() + index.toString().slice(1).replace("_", " ") }}</li>
+                </ul>
                 
-            </ul>
+                <ul class="text-2xl flex flex-col mx-10">
+                    <p class="border-b-2">Points</p>
+                    <li v-for="score in currentMatch.scores.home"><v-if v-if="score === null">0</v-if>{{ score }}</li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-2 p-2 rounded-xl justify-center flex flex-col place-items-center col-span-1">
+            <p class="text-3xl mb-5 underline">{{ currentMatch.teams.away.name }}</p>
+            <div class="pb-3 place-self-center object-center">
+                <img class="object-fill h-[200px]" :src="currentMatch.teams.away.logo" alt="away-team logo">
+            </div>
+            <div class="flex flex-row border-2 rounded-xl">
+                <ul class="text-2xl flex flex-col mx-10">
+                    <p class="border-b-2 w-full">Quarter</p>
+                    <li v-for="score, index in currentMatch.scores.away">{{ index.toString()[0].toUpperCase() + index.toString().slice(1).replace("_", " ") }}</li>
+                    
+                </ul>
+                
+                <ul class="text-2xl flex flex-col mx-10">
+                    <p class="border-b-2 w-full">Points</p>
+                    <li v-for="score in currentMatch.scores.away"><v-if v-if="score === null">0</v-if>{{ score }}</li>
+                </ul>
+            </div>
         </div>
     </div>
 </template>

@@ -1,5 +1,21 @@
 <script setup lang="ts">
     import {sports} from "./Sports.mjs"
+    
+    const {id} = useRoute().params;
+    const requestId = id as string || "";
+    const config = useRuntimeConfig();
+    const { data, } = await useAsyncData<any>(() => $fetch(`https://api-basketball.p.rapidapi.com/leagues`, {
+        method: "GET",
+        headers: {
+            'X-RapidAPI-Key': (config.public.apiKey as string) || '',
+            'X-RapidAPI-Host': 'api-basketball.p.rapidapi.com'
+        },
+        params: {
+            type: "league",
+
+        },
+    }))
+    
     function whichSport() {
         for (let sport of sports) {
             if (useRoute().path) {
@@ -8,24 +24,25 @@
         }
     }
 
+    const currentSport = whichSport();
 
-const currentSport = whichSport();
+    const leagues = data.value?.response;
+    
 
-    
-    
     
 </script>
 
 <template>
 
-    <div class="border-2 mx-48 grid grid-cols-12 grid-rows-2 gap-5 overflow-x-scroll px-10 pb-5 rounded-xl my-6">
-        <p class="justify-self-center col-span-12 ro text-2xl font-medium border-b-2 w-full p-5 mb-5 text-center">Leagues</p>
+    <div class="border-2 mx-48 grid grid-cols-5 gap-5 px-10 pb-5 rounded-xl my-6">
+        <p class="justify-self-center col-span-5 text-2xl font-medium border-b-2 w-full p-5 mb-5 text-center">Leagues</p>
         <NuxtLink
-            v-for="league of currentSport?.leagues"
-            class="flex items-center justify-center col-span-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded bg-zinc-600 text-l font-medium text-white my-5"
-            :key="league.id"
-            :to="`/content/${currentSport?.url}/matches/${league.id}`"
-            >{{ league.title }}
+            v-for="league in leagues"
+            class="border-2 rounded-xl flex flex-col place-items-center text-2xl"
+            :to="`/content/${currentSport?.url}/leagues/${leagues.name}/${league.id}`"
+            >{{ league.name }} <br>
+            <img class="w-[150px] pt-5" :src="league.logo" alt="league logo"> <br>
+            {{ league.country.name }}
         </NuxtLink>
     </div>
         

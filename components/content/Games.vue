@@ -34,9 +34,9 @@
 <template>
 
 
-    <div class="text-center border-2 mx-48 grid grid-cols-4 gap-3 px-3 rounded-xl my-6">
+    <div class="text-center border-2 mx-48 grid grid-cols-4 gap-3 px-3 p-5 rounded-xl my-6">
         
-        <p class="col-span-4 text-2xl font-medium border-b-4 p-5 mb-5 text-center">Matches</p>
+        <p class="col-span-4 text-2xl font-medium border-b-2 pb-5 mb-5 text-center">Matches</p>
         
         <NuxtLink
             v-for="match in matches"
