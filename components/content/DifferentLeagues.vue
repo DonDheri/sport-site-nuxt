@@ -39,7 +39,7 @@
         <NuxtLink
             v-for="league in leagues"
             class="border-2 rounded-xl flex flex-col place-items-center text-2xl"
-            :to="`/content/${currentSport?.url}/leagues/${leagues.name}/${league.id}`"
+            :to="`/content/${currentSport?.url}/leagues/${league.id}`"
             >{{ league.name }} <br>
             <img class="w-[150px] pt-5" :src="league.logo" alt="league logo"> <br>
             {{ league.country.name }}

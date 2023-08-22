@@ -10,5 +10,4 @@
 
     <DifferentLeagues/>
 
-    <Games/>
 </template>

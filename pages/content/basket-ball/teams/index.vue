@@ -1,10 +1,8 @@
 <script setup lang="ts">
-
-
     const {id} = useRoute().params;
-    const requestId = id as String || "";
+    const requestId = id as string || "";
     const config = useRuntimeConfig();
-    const { data, } = await useAsyncData<any>(() => $fetch(`https://api-basketball.p.rapidapi.com/statistics`, {
+    const { data, } = await useAsyncData<any>(() => $fetch(`https://api-basketball.p.rapidapi.com/teams`, {
         method: "GET",
         headers: {
             'X-RapidAPI-Key': (config.public.apiKey as string) || '',
@@ -13,14 +11,14 @@
         params: {
             season: "2022-2023",
             league: Number(requestId)
-        
+
         },
     }))
     const teams = data.value?.response;
+    console.log(useRoute().params);
+    
 </script>
 
 <template>
-    <div class="border-2 rounded-xl mx-48 my-10">
 
-    </div>
 </template>
