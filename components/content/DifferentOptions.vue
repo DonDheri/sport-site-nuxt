@@ -5,32 +5,7 @@
     const { id } = useRoute().params;
     const requestId = id as string || "";
     const currentSport = sports[Number(requestId)];
-    const props = defineProps<{
-        id: number,
-        title: string,
-        url: string,
-        leagues?: [
-            {
-                id: number,
-                title: string,
-                type: string,
-                country: {
-                    id: number,
-                    title: string,
-                    code: string,
-                    flag: string
-                },
-                seasons?: [
-                    {
-                        season: string,
-                        start: string,
-                        end: string
-                    }
-                ]
-            }
-        ],
-
-    }>()
+    
     
 
     
