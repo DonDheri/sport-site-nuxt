@@ -17,7 +17,6 @@
     const requestId = id as string || "";
     const config = useRuntimeConfig();
     const { data, } = await useAsyncData<any>(() => $fetch(`https://api-basketball.p.rapidapi.com/games`, {
-        method: "GET",
         headers: {
             'X-RapidAPI-Key': (config.public.apiKey as string) || '',
             'X-RapidAPI-Host': 'api-basketball.p.rapidapi.com'
