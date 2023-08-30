@@ -8,6 +8,8 @@
 
     <DifferentSports/>
 
+    <Games/>
+
     <DifferentLeagues/>
 
 </template>

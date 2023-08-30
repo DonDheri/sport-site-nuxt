@@ -60,7 +60,7 @@
             <div class="flex flex-row border-2 rounded-xl">
                 <ul class="text-2xl flex flex-col mx-10">
                     <p class="border-b-2">Quarter</p>
-                    <li v-for="score, index in currentMatch.scores.home">{{ index.toString()[0].toUpperCase() + index.toString().slice(1).replace("_", " ") }}</li>
+                    <li v-for="score, index in currentMatch.scores.home">{{ index.toString()[0].toUpperCase() + index.toString().slice(1).replace("_", " ") }}:</li>
                 </ul>
                 
                 <ul class="text-2xl flex flex-col mx-10">
@@ -79,7 +79,7 @@
             <div class="flex flex-row border-2 rounded-xl">
                 <ul class="text-2xl flex flex-col mx-10">
                     <p class="border-b-2 w-full">Quarter</p>
-                    <li v-for="score, index in currentMatch.scores.away">{{ index.toString()[0].toUpperCase() + index.toString().slice(1).replace("_", " ") }}</li>
+                    <li v-for="score, index in currentMatch.scores.away">{{ index.toString()[0].toUpperCase() + index.toString().slice(1).replace("_", " ") }}:</li>
                     
                 </ul>
                 

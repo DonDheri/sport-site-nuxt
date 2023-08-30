@@ -22,13 +22,7 @@
     const matches = computed(() => {
         return data.value?.response;
     })
-    function m() {
-        for (let match in matches.value) {
-            return match;
-        }
-    }
-    const match = m()
-    console.log(match);
+    
     
     
 </script>
@@ -40,7 +34,7 @@
         
         
         class=""
-        >{{ match }}
+        >{{  }}
         </NuxtLink>
         
         <p class="text-2xl font-medium w-full">vs</p>
