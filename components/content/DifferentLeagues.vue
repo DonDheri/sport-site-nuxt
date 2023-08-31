@@ -16,6 +16,7 @@
         },
     }))
     
+    
     function whichSport() {
         for (let sport of sports) {
             if (useRoute().path) {

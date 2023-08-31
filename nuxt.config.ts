@@ -9,6 +9,7 @@ export default defineNuxtConfig({
   },
   modules: [
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/google-fonts'
   ],
   components: {
     dirs: [
@@ -21,5 +22,6 @@ export default defineNuxtConfig({
     transpile: [
       "@vuepic/vue-datepicker"
     ]
-  }
+  },
+  
 })

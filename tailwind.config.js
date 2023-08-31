@@ -30,6 +30,6 @@ module.exports = {
   variants: {
     backgroundColor: ["active"]
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 }
 
