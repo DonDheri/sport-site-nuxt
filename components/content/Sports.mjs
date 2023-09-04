@@ -2,6 +2,7 @@
 export const sports = [
     {
         id: 0,
+        active: true,
         title: "Basket Ball",
         url:"basket-ball",
         leagues: [
@@ -69,20 +70,28 @@ export const sports = [
     },
     {
         id: 1,
+        active: false,
         title: "Hockey",
         url:"hockey",
         text: "NHL",
         },
         {
         id: 2,
+        active: false,
         title: "Base Ball",
         url:"base-ball",
         text: "MLB",
         },
         {
         id: 3,
+        active: false,
         title: "Foot Ball",
         url: "foot-ball",
         text: "NFL"  
     },
 ]
+export const currentSport = () => {
+    for (let sport of sports) {
+        return sport.active? sport: ""
+    }
+}
