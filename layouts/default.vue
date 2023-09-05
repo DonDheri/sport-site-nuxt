@@ -1,6 +1,4 @@
 <script setup lang="ts">
-    import { currentSport } from '@/components/content/Sports.mjs';
-    let activePage = 0;
     const links = [
         { name: 'Home', url: '/', text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum fugiat possimus, aut enim provident distinctio excepturi deleniti est iure incidunt maiores nostrum adipisci rem esse cumque minima eveniet eum quo? Mollitia veniam asperiores ab illo delectus ex iste corporis autem, deleniti similique? Ab ut delectus dolores repudiandae placeat reprehenderit repellendus doloremque similique impedit explicabo, adipisci, error laborum iure necessitatibus soluta, minima asperiores quas quibusdam! Nihil explicabo, ratione quisquam doloremque fugit unde ad reiciendis vitae ex esse quam quae sit iure autem consequatur deleniti accusantium ea cupiditate vel nostrum numquam ipsum maiores? Quaerat voluptatem architecto corrupti sit minus sed dicta, cupiditate saepe ipsa ducimus cum! Id dignissimos consequuntur corrupti ea laboriosam, consequatur aut qui sunt, nobis impedit non temporibus porro ipsam error est possimus quasi eveniet rerum, sint iusto inventore sed quod nisi! Reprehenderit distinctio enim dolore beatae doloremque nemo officia eius quis sapiente nam, fugit unde ab error consequuntur officiis soluta quas fuga nisi vel. Ipsum delectus vel eveniet molestiae veniam optio molestias tenetur quis? Vel odio nesciunt assumenda nobis laborum quia quam beatae at veritatis itaque tempora blanditiis nihil corporis fugit reprehenderit minus, aperiam totam aliquam. Eos natus, ex fugiat officia ipsam ipsum pariatur earum et ad explicabo? Expedita.", },
         { name: 'About', url: '/info/about', text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum fugiat possimus, aut enim provident distinctio excepturi deleniti est iure incidunt maiores nostrum adipisci rem esse cumque minima eveniet eum quo? Mollitia veniam asperiores ab illo delectus ex iste corporis autem, deleniti similique? Ab ut delectus dolores repudiandae placeat reprehenderit repellendus doloremque similique impedit explicabo, adipisci, error laborum iure necessitatibus soluta, minima asperiores quas quibusdam! Nihil explicabo, ratione quisquam doloremque fugit unde ad reiciendis vitae ex esse quam quae sit iure autem consequatur deleniti accusantium ea cupiditate vel nostrum numquam ipsum maiores? Quaerat voluptatem architecto corrupti sit minus sed dicta, cupiditate saepe ipsa ducimus cum! Id dignissimos consequuntur corrupti ea laboriosam, consequatur aut qui sunt, nobis impedit non temporibus porro ipsam error est possimus quasi eveniet rerum, sint iusto inventore sed quod nisi! Reprehenderit distinctio enim dolore beatae doloremque nemo officia eius quis sapiente nam, fugit unde ab error consequuntur officiis soluta quas fuga nisi vel. Ipsum delectus vel eveniet molestiae veniam optio molestias tenetur quis? Vel odio nesciunt assumenda nobis laborum quia quam beatae at veritatis itaque tempora blanditiis nihil corporis fugit reprehenderit minus, aperiam totam aliquam. Eos natus, ex fugiat officia ipsam ipsum pariatur earum et ad explicabo? Expedita.", },
@@ -97,30 +95,49 @@
         text: "NFL"  
     },
 ]
+    const props = defineProps<{
+        
+    }>()
 
-
-    const clicked = computed((event) => {
-        return event.target
-    })
-    console.log(clicked);
-    
+    // const clicked = (event: Event) => {
+        
+    //     return event.target.classList.toggle("tab-active")
+    // }
+    function deActivate(event: Event) {
+        for (let sport of sports) {
+            if (sport.active === true) {
+                return sport.active = false;
+            }
+        }
+    }
+    const clicked = (event: Event) => {
+        
+        for (let sport of sports) {
+            if (event.target.id.toString() === sport.id.toString()) {
+                return sport.active = true
+            }
+        }
+        
+    }
 </script>
 
 <template>
-    <div class="text-lime-500">
+    <div class="text-lime-500 uppercase text-center">
         <div class="navbar flex justify-center h-[150px] md:justify-start bg-black">
-            <h2 class="text-4xl italic font-bold uppercase tracking-tight sm:text-3xl sm:h-[100px] md:h-[75px]">The Sports Site</h2>
+            <h2 class="text-4xl italic font-bold tracking-tight sm:text-3xl sm:h-[100px] md:h-[75px]">The Sports Site</h2>
         </div>
-        <div class="bg-gray-950 grid grid-cols-4 text-center">
-            <p class="col-span-4 text-xl border-b-2 border-lime-500">All Sports</p>
-            <div class="tabs col-span-4">
+        <div class="bg-gray-950">
+            <p class=" text-2xl py-1 border-b-2 border-lime-500">All Sports</p>
+            <div class="tabs tabs-boxed place-content-center object-contain">
                 <button
-                    v-for="sport in sports"
-                    :key="sport.url.toString()"
-                    class="tab tab-lg font-semibold p-1 first:tab-active"
-                    @click="clicked.value.className = 'tab-active'"
+                v-for="sport in sports"
+                @click="deActivate"
+                :id="`${sport.id}`"
+                :key="sport.url"
+                class="tab rounded-full text-lime-500 font-semibold uppercase flex-wrap"
+                :class="{ 'tab-lifted': sport.active === true }"
                 >{{ sport.title }}</button>
-            </div >    
+            </div>
         </div>
     </div>
 
