@@ -26,43 +26,24 @@
         },
     }))
 
-    const matches = data.value?.response;
+    const games = data.value?.response;
     
 </script>
 
 <template>
-
-
-    <div class="text-center border-2 mx-48 grid grid-cols-4 gap-3 px-3 p-5 rounded-xl my-6">
-        
-        <p class="col-span-4 text-2xl font-medium border-b-2 pb-5 mb-5 text-center">Matches</p>
-        
-        <NuxtLink
-            v-for="match in matches"
-            :to="`/content/${currentSport?.url}/matches/${match.id}`"
-            class="rounded-xl border-2 p-5 grid grid-cols-6 grid-rows-2 justify-center items-center"
-        >
-            <p class="text-2xl text-center col-span-6 row-span-2">{{ match.time }}</p>
-            <div class="col-span-6 flex flex-row">
-                <div class="flex flex-col">
-                    <p class="text-center text-xl mb-4">
-                        {{ match.teams.home.name }}
-                    </p>
-                    <img class="h-[100px] w-[100px]" :src="match.teams.home.logo" alt="home-team logo">
+    <div class="text-lime-500 bg-gray-950">
+    <p class="text-lg py-1">Today's Games</p>
+        <div class="carousel space-x-4 w-screen my-4">
+            <div v-for="game in games" class="carousel-item flex-col bg-black rounded-2xl w-[150px] p-3">
+                <div class="flex flex-row">
+                    <p class="justify-self-start">{{ game.teams.home.name }}:</p>
+                    <p class="justify-self-end">{{ game.scores.home.total }}</p>
                 </div>
-                
-                <p class="text-4xl font-medium my-10 border-x-2 text-center px-1 mx-5 pb-2">vs</p>
-                
-                <div class="flex flex-col justify-center">
-                    <p class="text-center text-xl mb-4">
-                        {{ match.teams.away.name }}
-                    </p>
-                    <img class="h-[100px] w-[100px]" :src="match.teams.away.logo" alt="away-team logo">
+                <div class="flex flex-row">
+                    <p class="justify-self-start">{{ game.teams.away.name }}:</p>
+                    <p class="justify-self-end">{{ game.scores.away.total }}</p>
                 </div>
             </div>
-        </NuxtLink>
+        </div>
     </div>
-            
-
-
 </template>

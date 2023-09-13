@@ -1,10 +1,30 @@
 <script setup lang="ts">
     import {sports} from "./Sports.mjs"
+    function d(date: string | any[]) {
+        return date.slice(0,10);
+    }
+    const date = d(new Date().toISOString());
+    const config = useRuntimeConfig();
+    const { data: Teams } = await useAsyncData<any>(() => $fetch(`https://api-basketball.p.rapidapi.com/games`, {
+        headers: {
+            'X-RapidAPI-Key': (config.public.apiKey as string) || '',
+            'X-RapidAPI-Host': 'api-basketball.p.rapidapi.com'
+        },
+        params: {
+            date: date
+        },
+    }))
+    const teams = Teams.value?.response;
 </script>
 
 <template>
-    <div class="border-2 mx-48 grid grid-cols-12 grid-rows-2 gap-5 overflow-x-scroll px-10 p-5 rounded-xl my-6">
-        <p class="justify-self-center col-span-12 text-2xl font-medium border-b-2 w-full pb-5 text-center">Sports</p>
-        <NuxtLink class="flex items-center justify-center p-2 col-span-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded bg-zinc-600 text-l font-medium text-white" >{{ "___" }}</NuxtLink>
+    <div class="text-lime-500 text-center bg-gray-950">
+    <p class="text-lg py-1">Teams</p>
+        <div class="carousel space-x-4 w-screen my-4">
+            <div v-for="team in teams" class="carousel-item flex-col bg-black place-items-center rounded-2xl w-[150px]">
+                <p>{{ team.name }}</p>
+                <img :src="team.logo" alt="team logo" class="w-[50px] h-[50px]">
+            </div>
+        </div>
     </div>
 </template>
