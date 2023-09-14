@@ -56,7 +56,7 @@
     </slot>
 
 
-    <div class="flex flex-row sticky bg-gray-950 bottom-0 w-full h-16">
+    <div class="flex flex-row fixed bg-gray-950 bottom-0 w-full h-16">
         <p class="mt-2 mx-6 justify-self-start">Lukas <br> Lilholt</p>
         <div class="mx-10 place-items-center flex gap-x-8 text-base text-white text-[20px]">
             <NuxtLink
