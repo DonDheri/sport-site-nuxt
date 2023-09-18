@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 
     useServerHeadSafe({
-        title: 'Sport Site'
+        title: 'Sport Site',
+        
     });
-    
     
 </script>
 <template>

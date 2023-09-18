@@ -31,5 +31,13 @@ module.exports = {
     backgroundColor: ["active"]
   },
   plugins: [require("daisyui")],
+  daisyui: {
+    themes: ["light", "dark", "night"],
+    darkTheme: "dark",
+    base: true,
+    styled: true,
+    utils: true,
+    
+  }
 }
 

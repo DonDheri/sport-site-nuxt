@@ -29,41 +29,78 @@
         }
     }
     
+    function currSport() {
+        for (let sport of sports) {
+            if (sport.active) {
+                return sport
+            }
+        }
+    }
+    const currentSport = currSport();
+    
+    
     
 </script>
 
 <template>
-    <div class="text-lime-500 uppercase text-center">
+    <div class="bg-gray-950 uppercase text-center">
         
-        <div class="bg-gray-950">
-            <p class="text-2xl py-1 border-b-2 border-lime-500">The Sports Site</p>
-            <div class="navbar inline-flex space-x-2 overflow-x-auto" aria-label="Tabs">
+        <div class="">
+            <p class="text-2xl py-1 border-b-2">The Sports Site</p>
+            <div class="navbar inline-flex space-x-2 overflow-x-auto md:space-x-8" aria-label="Tabs">
+                <div class="drawer">
+                    <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+                    <div class="drawer-content">
+                        <!-- Page content here -->
+                        <label for="my-drawer"><svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"/></svg></label>
+                    </div> 
+                    <div class="drawer-side">
+                        <label for="my-drawer" class="drawer-overlay"></label>
+                        <ul class="menu p-4 w-80 min-h-full text-base-content">
+                            <!-- Sidebar content here -->
+                            <li class="border-b-2 mb-2 font-bold text-lg">Menu</li>
+                            <li>
+                                <NuxtLink to="/news/">News</NuxtLink>
+                            </li>
+                            <li>
+                                <NuxtLink to="/upcoming-games">Upcoming Games</NuxtLink>
+                            </li>
+                            <li>
+                                <NuxtLink to="/standings">Standings</NuxtLink>
+                            </li>
+                            <li>
+                                <NuxtLink to="/leagues">Leagues</NuxtLink>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                
+                
                 <button
-                    v-for="sport, index in sports"
-                    @click.prevent="clicked"
-                    :id="sport.id.toString()"
-                    ref="tabs"
-                    :key="index"
-                    class="h-fit btn btn-sm tab-lifted text-lime-500 font-semibold uppercase"
-                    :class="{ tabActive: sport.active === true }"
+                v-for="sport, index in sports"
+                @click.prevent="clicked"
+                :id="sport.id.toString()"
+                ref="tabs"
+                :key="index"
+                class="h-fit btn btn-sm tab-lifted font-semibold uppercase"
+                :class="{ tabActive: sport.active === true }"
                 >{{ sport.title }}</button>
             </div>
         </div>
     </div>
-
-    <slot>
-
+    
+    <slot data-theme="light">
+        
     </slot>
-
-
-    <div class="flex flex-row fixed bg-gray-950 bottom-0 w-full h-16">
-        <p class="mt-2 mx-6 justify-self-start">Lukas <br> Lilholt</p>
-        <div class="mx-10 place-items-center flex gap-x-8 text-base text-white text-[20px]">
-            <NuxtLink
-                v-for="link in links"
-                :to="link.url"
-                class="justify-self-end"
-                >{{ link.name }}</NuxtLink>
-        </div>
+    
+    
+    <div class="grid grid-cols-4 fixed bottom-0 w-full h-16 place-items-center">
+        <p class="col-span-1">Lukas <br> Lilholt</p>
+        <NuxtLink
+        v-for="link in links"
+        :to="link.url"
+        class=""
+        >{{ link.name }}</NuxtLink>
     </div>
 </template>
