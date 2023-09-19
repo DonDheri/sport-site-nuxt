@@ -12,8 +12,8 @@
             if (sport.active === true) {
                 sport.active = false;
                 for (let tab of tabs.value) {
-                    if (tab.classList.contains("tab-active")) {
-                        tab.classList.remove("tab-active")
+                    if (tab.classList.contains("btn-outline")) {
+                        tab.classList.remove("btn-outline")
                     }
                 }
             }
@@ -24,11 +24,10 @@
         for (let sport of sports) {
             if (event.target.id.toString() === sport.id.toString()) {
                 sport.active = true;
-                event.target.classList.add("tab-active");
+                event.target.classList.add("btn-outline");
             }
         }
     }
-    
     function currSport() {
         for (let sport of sports) {
             if (sport.active) {
@@ -43,12 +42,11 @@
 </script>
 
 <template>
-    <div class="bg-gray-950 uppercase text-center">
+    <div class="bg-info-content uppercase text-center mb-2">
         
-        <div class="">
-            <p class="text-2xl py-1 border-b-2">The Sports Site</p>
-            <div class="navbar inline-flex space-x-2 overflow-x-auto md:space-x-8" aria-label="Tabs">
-                <div class="drawer">
+        <div class="grid grid-cols-6 p-2">
+            <p class="text-2xl py-1 text-start col-span-5 ">The Sports Site</p>
+            <div class="drawer drawer-end border rounded-xl col-span-1 col-start-6 place-items-center">
                     <input id="my-drawer" type="checkbox" class="drawer-toggle" />
                     <div class="drawer-content">
                         <!-- Page content here -->
@@ -56,51 +54,45 @@
                     </div> 
                     <div class="drawer-side">
                         <label for="my-drawer" class="drawer-overlay"></label>
-                        <ul class="menu p-4 w-80 min-h-full text-base-content">
+                        <ul class="menu p-4 w-80 min-h-full text-base-content bg-info-content">
                             <!-- Sidebar content here -->
-                            <li class="border-b-2 mb-2 font-bold text-lg">Menu</li>
-                            <li>
-                                <NuxtLink to="/news/">News</NuxtLink>
+                            <li class="border-b mb-2 font-bold text-lg">
+                                <p>Menu</p>
                             </li>
-                            <li>
-                                <NuxtLink to="/upcoming-games">Upcoming Games</NuxtLink>
-                            </li>
-                            <li>
-                                <NuxtLink to="/standings">Standings</NuxtLink>
-                            </li>
-                            <li>
-                                <NuxtLink to="/leagues">Leagues</NuxtLink>
-                            </li>
+                            <li v-for="link in links">
+                                <NuxtLink
+                                    :to="'#'"
+                                    class=""
+                                >{{ link.name }}</NuxtLink>
+                                </li>
                         </ul>
                     </div>
                 </div>
-                
-                
-                
+            </div>
+            <div class="navbar border-t inline-flex space-x-2 overflow-x-auto md:space-x-8" aria-label="Tabs">
                 <button
-                v-for="sport, index in sports"
+                v-for="(sport, index) in sports"
                 @click.prevent="clicked"
                 :id="sport.id.toString()"
                 ref="tabs"
                 :key="index"
-                class="h-fit btn btn-sm tab-lifted font-semibold uppercase"
-                :class="{ tabActive: sport.active === true }"
-                >{{ sport.title }}</button>
+                class="h-fit btn btn-sm font-semibold uppercase"
+                :class="{ 'btn-outline': sport.active }"
+                >{{ sport.name }}</button>
             </div>
-        </div>
     </div>
     
-    <slot data-theme="light">
+    <slot>
         
     </slot>
     
     
-    <div class="grid grid-cols-4 fixed bottom-0 w-full h-16 place-items-center">
+    <!-- <div class="grid grid-cols-4 fixed bottom-0 w-full h-16 place-items-center bg-info-content">
         <p class="col-span-1">Lukas <br> Lilholt</p>
         <NuxtLink
         v-for="link in links"
         :to="link.url"
         class=""
         >{{ link.name }}</NuxtLink>
-    </div>
+    </div> -->
 </template>
