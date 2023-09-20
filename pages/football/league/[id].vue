@@ -2,5 +2,5 @@
 
 </script>
 <template>
-    <p>leagues</p>
+    <div></div>
 </template>

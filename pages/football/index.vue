@@ -2,5 +2,5 @@
 
 </script>
 <template>
-    <p>news</p>
+    <Games/>
 </template>

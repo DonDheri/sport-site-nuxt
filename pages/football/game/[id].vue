@@ -2,5 +2,5 @@
 
 </script>
 <template>
-    <p>standing</p>
+    <div></div>
 </template>

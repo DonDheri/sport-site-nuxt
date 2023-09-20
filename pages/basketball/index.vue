@@ -2,5 +2,5 @@
 
 </script>
 <template>
-    <p>upcoming-games</p>
+    <Games/>
 </template>
