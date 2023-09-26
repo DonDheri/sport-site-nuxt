@@ -4,7 +4,7 @@
         title: 'Sport Site',
         
     });
-    
+    useRouter().push({path: "/football"});
 </script>
 <template>
     <Games/>

@@ -2,19 +2,7 @@
     import {sports} from "./Sports.mjs"
     import VueDatePicker from "@vuepic/vue-datepicker";
     import '@vuepic/vue-datepicker/dist/main.css'
-import { totalmem } from "os";
 
-    let arr = [
-        {
-            id: 1,
-        },
-        {
-            id: 5,
-        },
-        {
-            id: 10,
-        }
-    ]
     function whichSport() {
         for (let sport of sports) {
             if (sport.active === true) {
@@ -25,7 +13,7 @@ import { totalmem } from "os";
         }
     }
     const sportId = whichSport()?.id.toString() || "";
-    const sportSlug: String = whichSport().slug;
+    const sportSlug = whichSport()?.slug || "";
 
     const date = ref(new Date());
     const formatDate = (date: Date) => {
@@ -44,34 +32,27 @@ import { totalmem } from "os";
     const { id } = useRoute().params;
     const requestId = id as String || "";
     const config = useRuntimeConfig();
-    const { data: sections } = await useAsyncData(() => $fetch(`https://sportscore1.p.rapidapi.com/sports/${sportId}/sections`, {
-        headers: {
-            'X-RapidAPI-Key': (config.public.apiKey as string) || '',
-            'X-RapidAPI-Host': 'sportscore1.p.rapidapi.com'
-        },
-    }))
-    const sortedSections = sections.value.data.sort((a: Object, b: Object) => b.priority - a.priority);
+    // const { data: sections } = await useAsyncData(sportId, () => $fetch(`https://sportscore1.p.rapidapi.com/sports/${sportId}/sections`, {
+    //     headers: {
+    //         'X-RapidAPI-Key': (config.public.apiKey as string) || '',
+    //         'X-RapidAPI-Host': 'sportscore1.p.rapidapi.com'
+    //     },
+    // }))
+    // const sortedSections = computed(() => {
+    //     return sections.value
+    // })
     
-    const { data: leagues } = await useAsyncData(() => $fetch(`https://sportscore1.p.rapidapi.com/sections/1/leagues`, {
-        headers: {
-            'X-RapidAPI-Key': (config.public.apiKey as string) || '',
-            'X-RapidAPI-Host': 'sportscore1.p.rapidapi.com'
-        },
-    }))
-    function sectionIds() {
-        let sectionIds = [];
-        for (let section of sortedSections) {
-            sectionIds.push(section.id);
-        }
-        return sectionIds;
-    }
-    function getLeagues() {
-        for (let id of sectionIds()) {
+    // const { data: leagues } = await useAsyncData(() => $fetch(`https://sportscore1.p.rapidapi.com/sections/1/leagues`, {
+    //     headers: {
+    //         'X-RapidAPI-Key': (config.public.apiKey as string) || '',
+    //         'X-RapidAPI-Host': 'sportscore1.p.rapidapi.com'
+    //     },
+    //     params: {page: 1}
+    // }))
+    
+    
+    
 
-        }
-    }
-    
-    
     
 </script>
 
@@ -83,26 +64,28 @@ import { totalmem } from "os";
             <VueDatePicker v-model="date" :enable-time-picker="false" style="width: 150px;" :auto-apply="true" :format="formatDate(date)" dark/>
         </div>
         <div class="divider mt-0 mb-1"></div>
-        <NuxtLink v-for="section in sortedSections" :to="`/${sportSlug}/league/`" :key="section.id" class="bg-info-content w-full inline-flex items-center">
-            <p> {{ section.name }} </p>
+        <NuxtLink :to="`/${sportSlug}/league/some`" class="bg-info-content w-full inline-flex items-center space-x-4 px-3 py-1">
+            <NuxtLink >Country</NuxtLink>
             <p>/</p>
-            <p>{{  }}</p>
+            <NuxtLink :to="`/football/league/some-slug`">League name</NuxtLink>
         </NuxtLink>
-            <NuxtLink  :to="`/${sportSlug}`" class="grid grid-cols-12">
-                <div class="col-span-2 flex flex-col">
+        <NuxtLink  :to="`/${sportSlug}/game/event-slug`">
+            <div class="grid grid-cols-12 px-1">
+                <div class="col-span-2 grid row-span-2">
                     <p class="text-[15px]">Time</p>
                     <p class="text-[12px] mt-1">Status</p>
                 </div>
-                <div class="col-span-8 text-[15px]">
+                <div class="col-span-8 grid text-[15px]">
                     <p>Home Team</p>
                     <p>Away Team</p>
                 </div>
-                <div class="col-span-2 flex flex-col text-xs">
+                <div class="col-span-2 grid text-xs flex flex-col">
                     <p>Odds</p>
                     <p>Odds</p>
                     <p>Odds</p>
                 </div>
                 <div class="divider col-span-12 my-0"></div>
-            </NuxtLink>
+            </div>
+        </NuxtLink>
     </div>
 </template>

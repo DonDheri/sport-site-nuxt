@@ -24,6 +24,7 @@
             <NuxtLink class="tab tab-active">Home</NuxtLink>
             <NuxtLink class="tab">Stats</NuxtLink>
             <NuxtLink class="tab">Line-ups</NuxtLink>
+            <NuxtLink class="tab">Table</NuxtLink>
             <NuxtLink class="tab">H2H</NuxtLink>
             
         </div>
