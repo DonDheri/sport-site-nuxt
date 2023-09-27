@@ -1,14 +1,15 @@
 <script setup lang="ts">
-    import {sports} from "./Sports.mjs"
+    import sportsData from "~/data/sportsData.json"
     import VueDatePicker from "@vuepic/vue-datepicker";
     import '@vuepic/vue-datepicker/dist/main.css'
+    
+    let sports = ref(sportsData);
+    let routePath = useRoute().path.slice(1, );
 
     function whichSport() {
-        for (let sport of sports) {
-            if (sport.active === true) {
+        for (let sport of sports.value) {
+            if (sport.slug === routePath) {
                 return sport;                
-            } else {
-                continue
             }
         }
     }
@@ -64,12 +65,12 @@
             <VueDatePicker v-model="date" :enable-time-picker="false" style="width: 150px;" :auto-apply="true" :format="formatDate(date)" dark/>
         </div>
         <div class="divider mt-0 mb-1"></div>
-        <NuxtLink :to="`/${sportSlug}/league/some`" class="bg-info-content w-full inline-flex items-center space-x-4 px-3 py-1">
-            <NuxtLink >Country</NuxtLink>
+        <NuxtLink :to="`${sportSlug}/league/some`" class="bg-info-content w-full inline-flex items-center space-x-4 px-3 py-1">
+            <p>Country</p>
             <p>/</p>
-            <NuxtLink :to="`/football/league/some-slug`">League name</NuxtLink>
+            <NuxtLink :to="`football/league/some-slug`">League name</NuxtLink>
         </NuxtLink>
-        <NuxtLink  :to="`/${sportSlug}/game/event-slug`">
+        <NuxtLink  :to="`${sportSlug}/game/event-slug`">
             <div class="grid grid-cols-12 px-1">
                 <div class="col-span-2 grid row-span-2">
                     <p class="text-[15px]">Time</p>

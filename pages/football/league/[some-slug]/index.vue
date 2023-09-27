@@ -1,7 +1,10 @@
 <script setup lang="ts">
-    import {sports} from "../../../../components/content/Sports.mjs"
+    import sportsData from "~/data/sportsData.json";
+
+    let sports = ref(sportsData);
+
     function whichSport() {
-        for (let sport of sports) {
+        for (let sport of sports.value) {
             if (sport.active === true) {
                 return sport;                
             } else {
@@ -17,7 +20,9 @@
     const nextGames = ref([]);
     const game = ref();
 
-    
+    definePageMeta({
+        layout: "default",
+    });
     
     
     

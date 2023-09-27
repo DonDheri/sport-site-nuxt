@@ -4,6 +4,9 @@
         title: 'Sport Site',
         
     });
+    definePageMeta({
+        layout: "default",
+    });
     useRouter().push({path: "/football"});
 </script>
 <template>

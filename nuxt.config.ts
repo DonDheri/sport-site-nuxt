@@ -19,6 +19,7 @@ export default defineNuxtConfig({
       '~/components/content',
       '~/components/info',
       '~/components/partials',
+      '~/data/sportsData'
     ]
   },
   build: {
