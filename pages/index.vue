@@ -1,5 +1,10 @@
 <script lang="ts" setup>
+    import sportData from "~/data/sportsData.json"
 
+    const sports = ref(sportData);
+
+    
+    
     useServerHeadSafe({
         title: 'Sport Site',
         
@@ -7,8 +12,7 @@
     definePageMeta({
         layout: "default",
     });
-    useRouter().push({path: "/football"});
+    navigateTo({ path: "/football" })
 </script>
 <template>
-    <Games/>
 </template>

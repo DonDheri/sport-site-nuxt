@@ -3,8 +3,12 @@
     import VueDatePicker from "@vuepic/vue-datepicker";
     import '@vuepic/vue-datepicker/dist/main.css'
     
+    const sportReg = /((?![/])(\w+)(?=[/])?)/;
     let sports = ref(sportsData);
     let routePath = useRoute().path.slice(1, );
+    const routeSlug = useRoute().path.match(sportReg)?.[0];
+    
+    
 
     function whichSport() {
         for (let sport of sports.value) {
@@ -53,7 +57,7 @@
     
     
     
-
+        
     
 </script>
 
@@ -65,28 +69,13 @@
             <VueDatePicker v-model="date" :enable-time-picker="false" style="width: 150px;" :auto-apply="true" :format="formatDate(date)" dark/>
         </div>
         <div class="divider mt-0 mb-1"></div>
-        <NuxtLink :to="`${sportSlug}/league/some`" class="bg-info-content w-full inline-flex items-center space-x-4 px-3 py-1">
-            <p>Country</p>
-            <p>/</p>
-            <NuxtLink :to="`football/league/some-slug`">League name</NuxtLink>
-        </NuxtLink>
-        <NuxtLink  :to="`${sportSlug}/game/event-slug`">
-            <div class="grid grid-cols-12 px-1">
-                <div class="col-span-2 grid row-span-2">
-                    <p class="text-[15px]">Time</p>
-                    <p class="text-[12px] mt-1">Status</p>
+        <div class="carousel">
+            <div class="carousel-item">
+                <p>lName</p>
+                <div>
+                    
                 </div>
-                <div class="col-span-8 grid text-[15px]">
-                    <p>Home Team</p>
-                    <p>Away Team</p>
-                </div>
-                <div class="col-span-2 grid text-xs flex flex-col">
-                    <p>Odds</p>
-                    <p>Odds</p>
-                    <p>Odds</p>
-                </div>
-                <div class="divider col-span-12 my-0"></div>
             </div>
-        </NuxtLink>
+        </div>
     </div>
 </template>
