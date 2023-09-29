@@ -15,7 +15,7 @@
     const sportId = whichSport()?.id.toString() || "";
     const sportSlug = whichSport()?.slug || "";
     const someSlug = useRoute().params;
-    const requestId = someSlug.someslug.toString();
+    const requestId = someSlug.toString();
 
     const nextGames = ref([]);
     const game = ref();
@@ -29,7 +29,7 @@
 </script>
 <template>
     <div class="p-2 grid grid-cols-12 grid-rows-5 place-items-center">
-        <div class="bg-red-900 h-[100px] w-[100px] row-span-3 col-span-12">img</div>
+        <div class="bg-red-900 h-[100px] w-[100px] row-span-3 col-span-12">logo</div>
         <p class="text-lg col-span-7 row-span-2 ">Some league name</p>
         <p class="col-span-1 row-span-2">-</p>
         <select class="select select-bordered select-sm col-span-4 row-span-2">

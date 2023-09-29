@@ -14,5 +14,4 @@
     });
     navigateTo({ path: "/football" })
 </script>
-<template>
-</template>
+

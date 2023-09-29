@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts',
     '@nuxtjs/color-mode',
   ],
+  
   components: {
     dirs: [
       '~/components/content',

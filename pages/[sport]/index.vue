@@ -2,5 +2,8 @@
     
 </script>
 <template>
-    <Games/>
+    <AllSports/>
+    <UpcomingMatches/>
+    <div class="divider my-1"></div>
+    <PopularLeagues/>
 </template>
