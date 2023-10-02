@@ -1,0 +1,54 @@
+<script setup lang="ts">
+    const props = defineProps({
+        sportSlug: String,
+
+        matchSlug: String,
+        matchDate: String,
+        matchTime: String,
+        timeLeft: String,
+
+        homeTeamName: String,
+        homeTeamSlug: String,
+        homeTeamScore: String || Number,
+
+        awayTeamName: String,
+        awayTeamSlug: String,
+        awayTeamScore: String || Number,
+    })
+    const paramTab = useRoute().params.tab;
+</script>
+
+<template>
+    <div class="grid grid-cols-3 grid-rows-12 place-items-center text-center mt-4">
+        <p class="col-span-3 row-span-1 text-xs">{{ props.matchDate }}</p>
+        <p class="col-span-3 row-span-1 text-xs">{{ props.matchTime }}</p>
+
+        <NuxtLink :to="`/${props.sportSlug}/team/${props.homeTeamSlug}`" class="flex flex-col col-start-1 col-span-1 row-span-12">
+            <div class="bg-black h-[50px] w-[50px] text-white place-self-center"></div>
+            <p class="text-md">{{ props.homeTeamName }}</p>
+        </NuxtLink>
+
+        <div class="flex flex-col col-span-1 row-span-10 space-y-2">
+           <p class="text-lg">{{ props.homeTeamScore }} - {{ props.awayTeamScore }}</p>
+           <p class="text-xs">{{ props.timeLeft }}</p>
+        </div>
+
+        <NuxtLink :to="`/${props.sportSlug}/team/${props.awayTeamSlug}`" class="flex flex-col col-span-1 row-span-12">
+            <div class="bg-black h-[50px] w-[50px] text-white place-self-center"></div>
+            <p class="text-md">{{ props.awayTeamName }}</p>
+        </NuxtLink>
+    </div>
+
+    <div class="divider my-0 mx-2"></div>
+    
+    <div class="w-full flex justify-center">
+        <div class="tabs">
+            <NuxtLink :to="`/${props.sportSlug}/match/${props.matchSlug}`" :class="['tab', 'tab-bordered', { tabActive: paramTab === undefined }]">Home</NuxtLink>
+            <NuxtLink :to="`/${props.sportSlug}/match/${props.matchSlug}/stats`" :class="['tab', 'tab-bordered', { tabActive: paramTab === 'stats' }]">Stats</NuxtLink>
+            <NuxtLink :to="`/${props.sportSlug}/match/${props.matchSlug}/line-ups`" :class="['tab', 'tab-bordered', { tabActive: paramTab === 'line-ups' }]">Line-ups</NuxtLink>
+            <NuxtLink :to="`/${props.sportSlug}/match/${props.matchSlug}/table`" :class="['tab', 'tab-bordered', { tabActive: paramTab === 'table' }]">Table</NuxtLink>
+            <NuxtLink :to="`/${props.sportSlug}/match/${props.matchSlug}/h2h`" :class="['tab', 'tab-bordered', { tabActive: paramTab === 'h2h' }]">H2H</NuxtLink>
+            
+        </div>
+    </div>
+</template>

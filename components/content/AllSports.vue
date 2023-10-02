@@ -2,7 +2,7 @@
     import sportsData from "~/data/sportsData.json"
     let sports = ref(sportsData);
 
-    let routePath = useRoute().path.slice(1, );
+    let routePath = useRoute().params.sport;
         
     function whichSport() {
         for (let sport of sports.value) {
@@ -25,7 +25,7 @@
             :to="`/${sport.slug}`"
             :id="sport.id"
             :key="index"
-            :class="['carousel-item', 'h-fit', 'tab', 'tab-bordered', 'font-semibold', 'uppercase', {tabActive: useRoute().path.slice(1, ) === sport.slug}]"
+            :class="['carousel-item', 'h-fit', 'tab', 'tab-bordered', 'font-semibold', 'uppercase', {tabActive: useRoute().params.sport === sport.slug}]"
         >{{ sport.name }}</NuxtLink>
     </div>
 </template>
