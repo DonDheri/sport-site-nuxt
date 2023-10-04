@@ -1,7 +1,16 @@
 <script setup lang="ts">
     const props = defineProps({
-        homeFormation: String,
+        homeTeamName: String,
+
+        homePlayerNum: Number,
+        homePlayerName: String,
+        homePlayerPos: String,
+        homePlayerAge: Number,
+        homePlayerPrice: Number,
         homePlayerRating: Number,
+
+        homeFormation: String,
+        homeOverallRating: Number,
         homePerfComp: Number,
 
         homeAttack: Number,
@@ -9,8 +18,17 @@
         homeDefending: Number,
         homeTactical: Number,
 
-        awayFormation: String,
+        awayTeamName: String,
+
+        awayPlayerNum: Number,
+        awayPlayerName: String,
+        awayPlayerPos: String,
+        awayPlayerAge: Number,
+        awayPlayerPrice: String,
         awayPlayerRating: Number,
+
+        awayFormation: String,
+        awayOverallRating: Number,
         awayPerfComp: Number,
 
         awayAttack: Number,
@@ -24,7 +42,7 @@
         <div class="text-md space-y-2">
             <p>{{ props.homeFormation }}</p>
             
-            <p>{{ props.homePlayerRating }}</p>
+            <p>{{ props.homeOverallRating }}</p>
 
             <p>{{ props.homePerfComp }} %</p>
         </div>
@@ -79,43 +97,59 @@
 
     <div class="divider my-0 mx-2"></div>
 
-    <table class="table-auto text-center w-full">
-        <thead class="">
-            <tr>
-                <th>#</th>
-                <th class="">Player</th>
-                <th>Position</th>
-                <th>Age</th>
-                <th>€</th>
-                <th>Rating</th>
-            </tr>
-        </thead>
+    <div>
+        <p class="font-semibold">{{ props.homeTeamName }}</p>
+        <table class="table-auto text-sm text-center w-full">
+            <thead class="">
+                <tr>
+                    <th>#</th>
+                    <th class="text-start">Player</th>
+                    <th>Position</th>
+                    <th>Age</th>
+                    <th>€</th>
+                    <th>Rating</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr >
+                    <th>{{ props.homePlayerNum }}</th>
+                    <td class="text-start">{{ props.homePlayerName }}</td>
+                    <td class="uppercase">{{ props.homePlayerPos }}</td>
+                    <td>{{ props.homePlayerAge }}</td>
+                    <td>{{ props.homePlayerPrice }}M+</td>
+                    <td>{{ props.homePlayerRating }}</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
 
-        <tbody>
-            <tr >
-                <th>1</th>
-                <td class="">James Trafford</td>
-                <td class="uppercase">G</td>
-                <td>20</td>
-                <td></td>
-                <td>63.7</td>
-            </tr>
-            <tr>
-                <th>28</th>
-                <td>Ameen Al Dakhil</td>
-                <td class="uppercase">D</td>
-                <td>21</td>
-                <td></td>
-                <td>52.1</td>
-            </tr>
-            <tr>
-                <th>5</th>
-                <td>Jordan Beyer</td>
-                <td class="uppercase">D</td>
-                <td>23</td>
-                <td>2,4M+</td>
-                <td>56.1</td>
-            </tr>
-        </tbody>
-    </table>
+    <div>
+        <p class="font-semibold">{{ props.awayTeamName }}</p>
+        <table class="table-auto text-sm text-center w-full">
+            <thead class="">
+                <tr>
+                    <th>#</th>
+                    <th class="text-start">Player</th>
+                    <th>Position</th>
+                    <th>Age</th>
+                    <th>€</th>
+                    <th>Rating</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr >
+                    <th>{{ props.awayPlayerNum }}</th>
+                    <td class="text-start">{{ props.awayPlayerName }}</td>
+                    <td class="uppercase">{{ props.awayPlayerPos }}</td>
+                    <td>{{ props.awayPlayerAge }}</td>
+                    <td>{{ props.awayPlayerPrice }}</td>
+                    <td>{{ props.awayPlayerRating }}</td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
 </template>
