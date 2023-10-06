@@ -19,7 +19,11 @@ export default defineNuxtConfig({
       '~/components/content',
       '~/components/info',
       '~/components/partials',
-      '~/data/sportsData'
+      '~/data/sportsData',
+      '~/components/league',
+      '~/components/match',
+      '~/components/phoneContent/league',
+      '~/components/phoneContent/match',
     ]
   },
   build: {

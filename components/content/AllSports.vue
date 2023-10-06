@@ -1,31 +1,26 @@
 <script setup lang="ts">
     import sportsData from "~/data/sportsData.json"
-    let sports = ref(sportsData);
-
-    let routePath = useRoute().params.sport;
-        
-    function whichSport() {
-        for (let sport of sports.value) {
-            if (sport.slug === routePath) {
-                return sport;                
-            } 
-        }
-    }
-    const currentSport = whichSport(); 
-
+    const sports = ref(sportsData);
     const tabs = ref([sports]);
+
+    let params = useRoute().params;
+        
+    
+
+
+
 
 </script>
 
 <template>
-    <div class="carousel tabs flex-nowrap py-2 bg-info-content" aria-label="tabs">
+    <div class="carousel tabs flex-nowrap py-2 bg-info-content lg:hidden" aria-label="tabs">
         <NuxtLink
             v-for="(sport, index) in sports"
             ref="tabs"
             :to="`/${sport.slug}`"
             :id="sport.id"
             :key="index"
-            :class="['carousel-item', 'h-fit', 'tab', 'tab-bordered', 'font-semibold', 'uppercase', {tabActive: useRoute().params.sport === sport.slug}]"
+            :class="['carousel-item', 'h-fit', 'tab', 'tab-bordered', 'font-semibold', 'uppercase', {tabActive: params.sport === sport.slug}]"
         >{{ sport.name }}</NuxtLink>
     </div>
 </template>

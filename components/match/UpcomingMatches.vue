@@ -1,7 +1,7 @@
 <script setup lang="ts">
     // import sportsData from "~/data/sportsData.json"
-    // import VueDatePicker from "@vuepic/vue-datepicker";
-    // import '@vuepic/vue-datepicker/dist/main.css'
+    import VueDatePicker from "@vuepic/vue-datepicker";
+    import '@vuepic/vue-datepicker/dist/main.css'
     
     // const sportReg = /((?![/])(\w+)(?=[/])?)/;
     // let sports = ref(sportsData);
@@ -21,7 +21,7 @@
     // }
     // const sportId = whichSport()?.id.toString() || "";
     // const sportSlug = whichSport()?.slug || "";
-
+    
     const date = ref(new Date());
     const formatDate = (date: Date) => {
         let day = date.getDate().toString();
@@ -82,11 +82,11 @@
 </script>
 
 <template>
-    <div class="mt-2 place-items-center">
+    <div class="ml-4 mt-2 place-items-center">
         <div class="mx-3 inline-flex space-x-6 items-center" >
             <p class="uppercase font-semibold">Upcoming Matches</p>
             <p>-</p>
-            <VueDatePicker v-model="date" :enable-time-picker="false" style="width: 150px;" :auto-apply="true" :format="formatDate(date)" dark/>
+            <VueDatePicker v-model="date" :enable-time-picker="false" style="width: 150px;" :auto-apply="true" :format="formattedDate" dark/>
         </div>
 
         <div class="divider my-0 mx-2"></div>
