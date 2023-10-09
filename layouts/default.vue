@@ -19,7 +19,7 @@
     <div class="bg-info-content uppercase text-center pt-1">
         
         <div class="grid grid-cols-12 p-2 lg:place-items-center">
-            <p class="text-2xl py-1 text-start col-span-11 lg:col-span-2">The Sports Site</p>
+            <p class="text-3xl py-1 text-center col-span-11 lg:col-span-2 font-inter font-bold lg:text-start">The Sports Site</p>
 
             <div class="col-span-8 tabs flex-nowrap py-2 bg-info-content place-self-center hidden lg:flex place-self-center" aria-label="tabs">
                 <NuxtLink

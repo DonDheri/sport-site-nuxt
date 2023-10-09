@@ -21,6 +21,15 @@
         :away-team-slug="'away-team'"
         :away-team-score="'Score'"
     />
+
+    <Stats v-if="tab === 'stats'"
+    :home-ball-poss="46"
+    :home-total-shots="14"
+
+    :away-ball-poss="54"
+    :away-total-shots="10"
+    />
+
     <LineUps v-if="tab === 'line-ups'"
         :home-team-name="'Nottingham Forest'"
 
@@ -43,7 +52,7 @@
         :away-team-name="'Burnley'"
 
         :away-player-num="1"
-        :away-player-name="'Matt Turner'"
+        :away-player-name="'James Trafford'"
         :away-player-pos="'G'"
         :away-player-age="20"
         :away-player-price="''"
@@ -59,4 +68,14 @@
         :away-tactical="50"
     />
     
+    <H2H v-if="tab === 'h2h'"
+    :game-date="'10/09-2023'"
+    :game-time="'00:00'"
+
+    :home-name="'Home Team'"
+    :home-score="2"
+    
+    :away-name="'Away Team'"
+    :away-score="1"
+    />
 </template>

@@ -84,7 +84,7 @@
 <template>
     <div class="ml-4 mt-2 place-items-center">
         <div class="mx-3 inline-flex space-x-6 items-center" >
-            <p class="uppercase font-semibold">Upcoming Matches</p>
+            <p class="uppercase font-bold font-inter">Upcoming Matches</p>
             <p>-</p>
             <VueDatePicker v-model="date" :enable-time-picker="false" style="width: 150px;" :auto-apply="true" :format="formattedDate" dark/>
         </div>
@@ -93,7 +93,7 @@
         
         <div class="carousel grid grid-flow-col uppercase mb-2 overflow-auto" ref="matches">
             <NuxtLink
-                :to="`/${props.sportSlug}/match/${props.matchSlug}/`"
+                :to="`/${props.sportSlug}/match/${props.matchSlug}/stats`"
                 ref="match"
                 class="carousel-item flex flex-row p-1 ">
                 <div class="grid grid-cols-4 grid-rows-4 gap-3 grid-flow-row w-[128px] h-[115px] font-semibold">

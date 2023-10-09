@@ -16,7 +16,6 @@ module.exports = {
       lg: '976px',
       xl: '1440px',
     },
-    
     extend: {
       spacing: {
         '128': '32rem',
@@ -24,8 +23,11 @@ module.exports = {
       },
       borderRadius: {
         '4xl': '2rem',
+      },
+      fontFamily: {
+        custom: ['inter']
       }
-    }
+    },
   },
   variants: {
     backgroundColor: ["active"]
