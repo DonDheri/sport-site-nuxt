@@ -1,4 +1,7 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+
+</script>
+
 <template>
     <CurrentTeam
         :team-logo="'logo'"

@@ -19,12 +19,12 @@
 </script>
 
 <template>
-    <div class="flex lg:place-content-center">
-        <div class="grid grid-cols-3 grid-rows-12 gap-x-16 place-items-center text-center mt-4">
+    <div class="flex place-content-center">
+        <div class="grid grid-cols-3 grid-rows-12 gap-x-4 place-items-center text-center mt-4 lg:gap-x-16">
             <p class="col-span-3 row-span-1 text-xs">{{ props.matchDate }}</p>
             <p class="col-span-3 row-span-1 text-xs">{{ props.matchTime }}</p>
 
-            <NuxtLink :to="`/${props.sportSlug}/team/${props.homeTeamSlug}`" class="flex flex-col col-start-1 col-span-1 row-span-12">
+            <NuxtLink :to="`/${props.sportSlug}/team/${props.homeTeamSlug}/stats`" class="flex flex-col col-start-1 col-span-1 row-span-12">
                 <div class="bg-black h-[50px] w-[50px] text-white place-self-center lg:h-[100px] lg:w-[100px]"></div>
                 <p class="text-md">{{ props.homeTeamName }}</p>
             </NuxtLink>
@@ -34,7 +34,7 @@
             <p class="text-xs">{{ props.timeLeft }}</p>
             </div>
 
-            <NuxtLink :to="`/${props.sportSlug}/team/${props.awayTeamSlug}`" class="flex flex-col col-span-1 row-span-12">
+            <NuxtLink :to="`/${props.sportSlug}/team/${props.awayTeamSlug}/stats`" class="flex flex-col col-span-1 row-span-12">
                 <div class="bg-black h-[50px] w-[50px] text-white place-self-center lg:h-[100px] lg:w-[100px]"></div>
                 <p class="text-md">{{ props.awayTeamName }}</p>
             </NuxtLink>

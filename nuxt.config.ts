@@ -28,6 +28,7 @@ export default defineNuxtConfig({
       '~/components/match',
       '~/components/phoneContent/league',
       '~/components/phoneContent/match',
+      '~/components/team',
     ]
   },
   build: {

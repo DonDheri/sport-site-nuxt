@@ -7,7 +7,7 @@
         <ul class="flex flex-col w-full mr-4">
             <h1 class="text-lg border-b border-neutral mb-1 pb-1" >Popular Leagues</h1>
             <li>
-                <NuxtLink :to="`/football/league/some-league`" class="uppercase text-sm">
+                <NuxtLink :to="`/football/league/some-league/standings`" class="uppercase text-sm">
                     Some League
                 </NuxtLink>
             </li>
