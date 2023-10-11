@@ -14,7 +14,24 @@
     }
     const sportId = whichSport()?.id.toString() || "";
     
-
+    // const select = ref();
+    const ballPossession = ref();
+    const bigChances = ref();
+    const bigChancesMissed = ref();
+    const blockedShots = ref();
+    const cornerKicks = ref();
+    const fouls = ref();
+    const goals = ref();
+    const offsides = ref();
+    const overUnder = ref();
+    const shotsInBox = ref();
+    const shotsOnTarget = ref();
+    const shotsOutBox = ref();
+    const totalShots = ref();
+    const yellowCards = ref();
+    const overallCheck = ref();
+    const homeCheck = ref();
+    const awayCheck = ref();
     const nextGames = ref([]);
     const game = ref();
 
@@ -59,7 +76,8 @@
         statGames: Number,
         statGoals: Number,
     });
-
+    
+    
 </script>
 <template>
     <!-- League display -->
@@ -173,49 +191,56 @@
     <!-- Stats -->
     <div v-if="params.tab === 'stats'" class="">
         <div class="flex justify-evenly">
-            <div class="form-control flex flex-row justify-evenly">
+            <div class="form-control flex flex-row justify-evenly place-items-center">
                 <select class="select select-sm">
-                    <option value="ball_possession" selected>Ball possession</option>
-                    <option value="big_chances">Big chances</option>
-                    <option value="big_chances_missed">Big chances missed</option>
-                    <option value="blocked_shots">Blocked Shots</option>
-                    <option value="corner_kicks">Corner kicks</option>
-                    <option value="fouls">Fouls</option>
-                    <option value="goals">Goals</option>
-                    <option value="offsides">Offsides</option>
-                    <option value="over/under">Over/under</option>
-                    <option value="shots_inside-box">Shots inside Box</option>
-                    <option value="shots_on_target">Shots on target</option>
-                    <option value="shots_outside-box">Shots outside box</option>
-                    <option value="total_shots">Total shots</option>
-                    <option value="yellow_cards">Yellow cards</option>
+                    <option ref="ballPossession">Ball possession</option>
+                    <option ref="bigChances">Big chances</option>
+                    <option ref="bigChancesMissed">Big chances missed</option>
+                    <option ref="blockedShots">Blocked Shots</option>
+                    <option ref="cornerKicks">Corner kicks</option>
+                    <option ref="fouls">Fouls</option>
+                    <option ref="goals">Goals</option>
+                    <option ref="offsides">Offsides</option>
+                    <option ref="overUnder">Over/under</option>
+                    <option ref="shotsInBox">Shots inside Box</option>
+                    <option ref="shotsOnTarget">Shots on target</option>
+                    <option ref="shotsOutBox">Shots outside box</option>
+                    <option ref="totalShots">Total shots</option>
+                    <option ref="yellowCards">Yellow cards</option>
                 </select>
             </div>
             <div class="form-control flex-row">
                 <label for="overall" class="label cursor-pointer flex-col">
                     <span class="label-text">Overall</span>
-                    <input class="checkbox checkbox-xs" type="checkbox" name="overall">
+                    <input ref="overallCheck" class="checkbox checkbox-xs" type="checkbox" name="overall" checked>
                 </label>
 
                 <label for="home" class="label cursor-pointer flex-col">
                     <span class="label-text">Home</span>
-                    <input class="checkbox checkbox-xs" type="checkbox" name="home">
+                    <input ref="homeCheck" class="checkbox checkbox-xs" type="checkbox" name="home">
                 </label>
 
                 <label for="away" class="label cursor-pointer flex-col">
                     <span class="label-text">Away</span>
-                    <input class="checkbox checkbox-xs" type="checkbox" name="away">
+                    <input ref="awayCheck" class="checkbox checkbox-xs" type="checkbox" name="away">
                 </label>
             </div>
         </div>
-        <table class="table table-xs border-collapse text-center">
+        <table class="table table-sm border-collapse text-center">
             <thead>
+                <!-- <tr>
+                    <th class="w-[125px] text-start">Team</th>
+                    <th>Games</th>
+                    <th>Result</th>
+                    <th>Average</th>
+                </tr> -->
                 <tr>
                     <th class="w-[125px] text-start">Team</th>
                     <th>Games</th>
-                    <th>Goals</th>
-                    <th>Ball Pos.</th>
-                    <th></th>
+                    <th>O 2.5</th>
+                    <th>U 2.5</th>
+                    <th>O 2.5 (%)</th>
+                    <th>U 2.5 (%)</th>
                 </tr>
             </thead>
             <tbody>

@@ -84,7 +84,7 @@
 <template>
     <div class="ml-4 mt-2 place-items-center">
         <div class="mx-3 inline-flex space-x-6 items-center" >
-            <p class="uppercase font-bold font-inter">Upcoming Matches</p>
+            <p class="uppercase font-bold font-inter">Todays Matches</p>
             <p>-</p>
             <VueDatePicker v-model="date" :enable-time-picker="false" style="width: 150px;" :auto-apply="true" :format="formattedDate" dark/>
         </div>
