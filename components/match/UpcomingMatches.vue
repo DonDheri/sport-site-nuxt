@@ -3,10 +3,6 @@
     import VueDatePicker from "@vuepic/vue-datepicker";
     import '@vuepic/vue-datepicker/dist/main.css'
     
-    // const sportReg = /((?![/])(\w+)(?=[/])?)/;
-    // let sports = ref(sportsData);
-    // let routePath = useRoute().path.slice(1, );
-    // const routeSlug = useRoute().path.match(sportReg)?.[0];
     
     const matches = ref([Object]);
     const match = ref();
