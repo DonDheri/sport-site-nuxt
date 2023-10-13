@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import sportsData from "~/data/sportsData.json";
+    import sportsData from "~/data/sportsData.json";
+    import '@vuepic/vue-datepicker/dist/main.css'
     const sports = ref(sportsData)
 
     const params = useRoute().params;
@@ -28,83 +29,82 @@ import sportsData from "~/data/sportsData.json";
     
 
     const config = useRuntimeConfig();
+    const {data: events} = await useAsyncData(() => $fetch(`https://sportscore1.p.rapidapi.com/sports/${currentSport?.id}/events/date/${formattedDate}`, {
+        method: "GET",
+        headers: {
+            'X-RapidAPI-Key': (config.public.apiKey as string) || "",
+            'X-RapidAPI-Host': 'sportscore1.p.rapidapi.com'
+        },
+        params: {
+            page: 1,
+        },
+    }));
+    const games = computed(() => {
+        return events.value.data;
+    });
     
-    
-    // const {data} = await useAsyncData(() => $fetch(`https://sportscore1.p.rapidapi.com/sports/${currentSport?.id}/sections`, {
-    //     method: "GET",
-    //     headers: {
-    //         'X-RapidAPI-Key': (config.public.apiKey as string) || "",
-    //         'X-RapidAPI-Host': 'sportscore1.p.rapidapi.com'
-    //     },
-    //     params: {
-    //         page: 1,
-    //     },
-    // }));
-    // const sections = computed(() => {
-    //     return data.value;
-    // })
+    const sortGames = () => {
+        return games.value.sort((a, b) => b.section.priority - a.section.priority);
+    };
+    const sortedGames = sortGames();
 
-    async function getAllSections() {
-        let allSections: Array<Object> = [];
-        let page = 1;
-        while (true) {
-            const {data} = await useAsyncData(() => $fetch(`https://sportscore1.p.rapidapi.com/sports/${currentSport?.id}/sections`, {
-                method: "GET",
-                headers: {
-                    'X-RapidAPI-Key': (config.public.apiKey as string) || "",
-                    'X-RapidAPI-Host': 'sportscore1.p.rapidapi.com'
-                },
-                params: {
-                    page: page,
-                }
-            }));
-            
-            
-            
-            
-            if (data.value.data.length === 0 || null || undefined) {
-                return allSections
-            } else {
-                allSections = allSections.concat(data.value.data)
-                page ++
-            }
-        }
-    }
-
-    console.log(await getAllSections());
-    
-
-    // const allSections = [];
-    // async function getAllSections(page = 1): Promise<any[]> {
-    //     const { data } = await useAsyncData(() => $fetch(`https://sportscore1.p.rapidapi.com/sports/${currentSport?.id}/sections`, {
+    // const getLeagues = async (page) => {
+    //     const {data: leagues} = await useAsyncData((page) => $fetch(`https://sportscore1.p.rapidapi.com/sports/${currentSport?.id}/leagues`, {
     //         method: "GET",
     //         headers: {
-    //         'X-RapidAPI-Key': (config.public.apiKey as string) || "",
-    //         'X-RapidAPI-Host': 'sportscore1.p.rapidapi.com'
+    //             'X-RapidAPI-Key': (config.public.apiKey as string) || "",
+    //             'X-RapidAPI-Host': 'sportscore1.p.rapidapi.com'
     //         },
     //         params: {
-    //         page: page,
+    //             page: page,
     //         },
     //     }));
-    //     const dataArray = data.value as any[];
-
+    //     const leagueData = computed(() => {
+    //         return leagues.value.data;
+    //     })
+    //     return leagueData;
+    // }
         
-    //     allSections.push(...dataArray)
         
-    //     if (dataArray && dataArray.length > 0) {
-    //         return dataArray.concat(await getAllSections(page + 1));
-    //     } else {
-    //         return [];
+    // const getAllLeagues = async () => {
+    //     const maxPages = 45;
+    //     const allLeagues = [];
+    //     for (let page = 1; page <= maxPages; page ++) {
+    //         const leagues = await getLeagues(page);
+    //         allLeagues.push(leagues);
     //     }
+    //     return allLeagues;
+    // }
+    // console.log(await getAllLeagues());
+    
+
+    // const leagues = ref([]);
+
+    // async function fetchData(page) {
+    // const response = await $fetch(`https://sportscore1.p.rapidapi.com/sports/${currentSport?.id}/leagues`, {
+    //     method: "GET",
+    //     headers: {
+    //     'X-RapidAPI-Key': (config.public.apiKey as string) || "",
+    //     'X-RapidAPI-Host': 'sportscore1.p.rapidapi.com'
+    //     },
+    //     params: {
+    //     page: page,
+    //     },
+    // });
+
+    // const data = await response.json();
+    // return data;
+    // }
+
+    // async function loadData() {
+    //     const maxPages = 10; // Set the maximum number of pages
+
+    //     for (let page = 1; page <= maxPages; page++) {
+    //         const { data: leaguesData } = await fetchData(page);
+    //         leagues.value = [...leagues.value, ...leaguesData]; // Append data to leagues
     //     }
+    // }
 
-    //     const sections = computed(async () => {
-    //     return (await getAllSections());
-    //     });
-    
-
-    
-    
 </script>
 <template>
     <AllSports/>
@@ -113,23 +113,37 @@ import sportsData from "~/data/sportsData.json";
             <PopularLeagues class="hidden lg:flex"/>
         </div>
         <div class="lg:col-span-10">
-            <UpcomingMatches
-            :sport-slug="'football'"
-            
-            :match-slug="'some-match-slug'"
-            :match-date="'Date'"
-            :match-time="'Time'"
-            
-            :league-name="'Some League'"
-            
-            :home-logo="'#'"
-            :home-name-short="'ABC'"
-            :home-score="'2'"
-            
-            :away-logo="'#'"
-            :away-name-short="'DEF'"
-            :away-score="'0'"
-            />
+            <div class="ml-4 mt-2 place-items-center">
+                <div class="mx-3 inline-flex space-x-6 items-center" >
+                    <p class="uppercase font-bold font-inter">Todays Matches</p>
+                    <p>-</p>
+                    <VueDatePicker v-model="date" :enable-time-picker="false" style="width: 150px;" :auto-apply="true" :format="formattedDate" dark/>
+                </div>
+        
+                <div class="divider my-0 mx-2"></div>
+            </div>
+            <div class="carousel grid grid-flow-col uppercase mb-2 overflow-auto space-x-5" ref="matches">
+                <div v-for="game in sortedGames">
+                    <UpcomingMatches v-if="game.status !== 'canceled'"
+                    :sport-slug="currentSport?.slug"
+                    
+                    :match-id="(game.id)"
+                    :match-date="game.start_at.slice(5, 11).replace('-', '/')"
+                    :match-time="game.start_at.slice(11,16)"
+                    npm
+                    :league-name="game.challenge.name"
+                    
+                    :home-logo="game.home_team.logo"
+                    :home-name-short="game.home_team.name_code"
+                    :home-score="game.home_team.score"
+                    
+                    :away-logo="game.away_team.logo"
+                    :away-name-short="game.away_team.name_code"
+                    :away-score="game.away_team.score"
+                    />
+                </div>
+            </div>
+
             <div class="divider my-0 mx-2 lg:hidden"></div>
             <PopularLeaguesPhone class="lg:hidden"/>
         </div>

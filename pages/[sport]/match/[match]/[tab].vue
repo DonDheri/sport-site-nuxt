@@ -1,14 +1,37 @@
 <script setup lang="ts">
+    import sportsData from "~/data/sportsData.json";
+    const sports = ref(sportsData)
 
-    const tab = useRoute().params.tab;
+    const params = useRoute().params;
+    const whichSport = () => {
+        for (let sport of sports.value) {
+            if (sport.slug === params.sport) {
+                return sport;
+            }
+        }
+    }
+    const currentSport = whichSport();
     
+    const config = useRuntimeConfig();
+    const {data: event} = await useAsyncData(() => $fetch(`https://sportscore1.p.rapidapi.com/events/${params.match.toString()}`, {
+        method: "GET",
+        headers: {
+            'X-RapidAPI-Key': (config.public.apiKey as string) || "",
+            'X-RapidAPI-Host': 'sportscore1.p.rapidapi.com'
+        },
+    }));
+    const game = computed(() => {
+        return event.value.data;
+    });
+    
+    console.log(game.value);
     
 </script>
 <template>
     <CurrentMatch
         :sport-slug="'football'"
         
-        :match-slug="'match-slug'"
+        :match-id="'match-slug'"
         :match-date="'Date'"
         :match-time="'Time'"
         :time-left="'Time Left'"
@@ -22,7 +45,7 @@
         :away-team-score="'Score'"
     />
 
-    <Stats v-if="tab === 'stats'"
+    <Stats v-if="params.tab === 'stats'"
     :home-ball-poss="46"
     :home-total-shots="14"
 
@@ -30,7 +53,7 @@
     :away-total-shots="10"
     />
 
-    <LineUps v-if="tab === 'line-ups'"
+    <LineUps v-if="params.tab === 'line-ups'"
         :home-team-name="'Nottingham Forest'"
 
         :home-player-num="1"
@@ -68,7 +91,7 @@
         :away-tactical="50"
     />
     
-    <H2H v-if="tab === 'h2h'"
+    <H2H v-if="params.tab === 'h2h'"
     :game-date="'10/09-2023'"
     :game-time="'00:00'"
 
