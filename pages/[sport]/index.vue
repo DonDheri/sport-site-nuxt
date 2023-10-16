@@ -1,9 +1,12 @@
 <script setup lang="ts">
     import sportsData from "~/data/sportsData.json";
+    import VueDatePicker from "@vuepic/vue-datepicker";
     import '@vuepic/vue-datepicker/dist/main.css'
     const sports = ref(sportsData)
-
+    const datePicker = ref();
     const params = useRoute().params;
+
+
     const whichSport = () => {
         for (let sport of sports.value) {
             if (sport.slug === params.sport) {
@@ -13,11 +16,11 @@
     }
     const currentSport = whichSport();
 
-    const date = new Date();
+    let date = ref(new Date());
     const formatDate = () => {
-        let day = date.getDate().toString();
-        let month = (date.getMonth()+1).toString();
-        let year = date.getFullYear().toString();
+        let day = date.value.getDate().toString();
+        let month = (date.value.getMonth()+1).toString();
+        let year = date.value.getFullYear().toString();
         if (Number(day) <= 9) {
             day = "0" + day;
         } else if (Number(month) <= 9) {
@@ -26,6 +29,7 @@
         return `${year}-${month}-${day}`;
     }
     const formattedDate = formatDate();
+      
     
 
     const config = useRuntimeConfig();
@@ -48,6 +52,8 @@
     };
     const sortedGames = sortGames();
 
+    
+    
     // const getLeagues = async (page) => {
     //     const {data: leagues} = await useAsyncData((page) => $fetch(`https://sportscore1.p.rapidapi.com/sports/${currentSport?.id}/leagues`, {
     //         method: "GET",
@@ -117,7 +123,7 @@
                 <div class="mx-3 inline-flex space-x-6 items-center" >
                     <p class="uppercase font-bold font-inter">Todays Matches</p>
                     <p>-</p>
-                    <VueDatePicker v-model="date" :enable-time-picker="false" style="width: 150px;" :auto-apply="true" :format="formattedDate" dark/>
+                    <VueDatePicker ref="datePicker" v-model="date" :enable-time-picker="false" style="width: 150px;" dark/>
                 </div>
         
                 <div class="divider my-0 mx-2"></div>

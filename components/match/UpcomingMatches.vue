@@ -23,7 +23,7 @@
     const props = defineProps({
         sportSlug: String,
         
-        matchId: String,
+        matchId: Number,
         matchDate: String,
         matchTime: String,
 
@@ -47,18 +47,16 @@
             <p class="uppercase font-bold font-inter">Todays Matches</p>
             <p>-</p>
             <VueDatePicker v-model="date" :enable-time-picker="false" style="width: 150px;" :auto-apply="true" :format="formattedDate" dark/>
-        </div>
+        </div> -->
 
-        <div class="divider my-0 mx-2"></div> -->
         <NuxtLink
-            :to="`/${props.sportSlug}/match/${props.matchId}/stats`"
+            :to="`/${props.sportSlug}/match/${props.matchId}/statistics`"
             ref="match"
             class="carousel-item flex flex-row p-1 font-inter">
             <div class="grid grid-cols-4 grid-rows-4 gap-3 grid-flow-row w-[150px] h-[115px] font-semibold">
                 <p class="text-xs col-span-4 row-span-1 align-sub">{{ props.leagueName }}</p>
 
                 <img :src="homeLogo" alt="no logo" class="h-[25px] w-[25px] col-span-1 row-span-1">
-                <!-- <div class="h-[25px] w-[25px] bg-black col-span-1 row-span-1" ></div> -->
                 <p class="col-span-2 row-span-1">{{ props.homeNameShort }}</p>
                 <p class="col-span-1 row-span-1 text-center">{{ props.homeScore }}</p>
                 

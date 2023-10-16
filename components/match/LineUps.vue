@@ -98,64 +98,8 @@
 
         <div class="divider my-0 mx-2"></div>
 
-        <div class="lg:flex lg:flex-row justify-evenly">
-            <div>
-                <p class="text-md capitalize">{{ props.homeTeamName }}</p>
-                <table class="table table-xs table-auto text-sm text-center w-full lg:table-lg">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th class="text-start">Player</th>
-                            <th>Position</th>
-                            <th>Age</th>
-                            <th>€</th>
-                            <th>Rating</th>
-                        </tr>
-                    </thead>
-                    
-                    <tbody>
-                        <tr >
-                            <th>{{ props.homePlayerNum }}</th>
-                            <td class="text-start capitalize">{{ props.homePlayerName }}</td>
-                            <td class="py-1 px-1 uppercase">{{ props.homePlayerPos }}</td>
-                            <td>{{ props.homePlayerAge }}</td>
-                            <td>{{ props.homePlayerPrice }}M+</td>
-                            <td>{{ props.homePlayerRating }}</td>
-                        </tr>
-                    
-                    </tbody>
-                </table>
-            </div>
+        <slot></slot>
 
-            <div class="divider my-2 mx-2"></div>
-
-            <div>
-                <p class="text-md capitalize">{{ props.awayTeamName }}</p>
-                <table class="table table-xs table-auto text-sm text-center w-full lg:table-lg">
-                    <thead>
-                        <tr>
-                            <th class="py-1 px-1">#</th>
-                            <th class="py-1 px-1 text-start">Player</th>
-                            <th class="py-1 px-1">Position</th>
-                            <th class="py-1 px-1">Age</th>
-                            <th class="py-1 px-1">€</th>
-                            <th class="py-1 px-1">Rating</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr >
-                            <th class="py-1 px-1">{{ props.awayPlayerNum }}</th>
-                            <td class="py-1 px-1 text-start capitalize">{{ props.awayPlayerName }}</td>
-                            <td class="py-1 px-1 uppercase">{{ props.awayPlayerPos }}</td>
-                            <td class="py-1 px-1">{{ props.awayPlayerAge }}</td>
-                            <td class="py-1 px-1">{{ props.awayPlayerPrice }}</td>
-                            <td class="py-1 px-1">{{ props.awayPlayerRating }}</td>
-                        </tr>
-                        
-                    </tbody>
-                </table>
-            </div>
-        </div>
+        
     </div>
 </template>

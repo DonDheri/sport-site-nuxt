@@ -23,7 +23,7 @@
     const game = computed(() => {
         return event.value;
     });
-    console.log(currentSport);
+    console.log(params.match);
     
     
 </script>
@@ -31,7 +31,6 @@
     <CurrentMatch
         :sport-slug="'football'"
         
-        :match-id="'id'"
         :match-date="'Date'"
         :match-time="'Time'"
         :time-left="'Time Left'"
