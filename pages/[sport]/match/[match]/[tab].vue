@@ -41,7 +41,7 @@
     // });
     
 
-console.log(errorStats.value);
+    console.log(errorStats.value);
 
 
     const {data: getLineups, error: errorLineups} = await useAsyncData(() => $fetch(`https://sportscore1.p.rapidapi.com/events/${params.match.toString()}/lineups`, {
@@ -93,7 +93,7 @@ console.log(errorStats.value);
     />
 
     <div v-if="params.tab === 'lineups'">
-        <!-- <LineUps
+        <LineUps
         :home-formation="lineups[0].formation || 'no formation'"
         :home-overall-rating="homeLineup.avg_rating"
         :home-perf-comp="homeLineup.best_composition"
@@ -111,8 +111,8 @@ console.log(errorStats.value);
         :away-technical="Math.round(awayLineup.technical)"
         :away-defending="Math.round(awayLineup.defending)"
         :away-tactical="Math.round(awayLineup.tactical)"
-        > -->
-            <!-- <HomeLineupTable
+        >
+            <HomeLineupTable
             :home-team-name="game.home_team.name"
             >
             <TableRowHome v-for="player in homeLineup.lineup_players"
@@ -135,7 +135,7 @@ console.log(errorStats.value);
             :away-player-rating="player.player.rating"
             />
             </AwayLineupTable>
-        </LineUps> -->
+        </LineUps>
     </div>
     <H2H v-if="params.tab === 'h2h'"
     :game-date="'10/09-2023'"
