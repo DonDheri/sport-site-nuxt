@@ -85,7 +85,6 @@
     
 
     // const leagues = ref([]);
-
     // async function fetchData(page) {
     // const response = await $fetch(`https://sportscore1.p.rapidapi.com/sports/${currentSport?.id}/leagues`, {
     //     method: "GET",
@@ -115,10 +114,14 @@
 <template>
     <AllSports/>
     <div class="lg:grid lg:grid-cols-12 lg:gap-x-3">
-        <div class="lg:col-span-2 lg:border-r-2 lg:border-neutral">
-            <PopularLeagues class="hidden lg:flex"/>
+        <div class="lg:col-span-3 lg:border-r-2 lg:border-neutral">
+            <PopularLeagues class="hidden lg:flex  "
+            :league-name="'some league'"
+            :league-logo="'logo'"
+            />
         </div>
-        <div class="lg:col-span-10">
+
+        <div class="lg:col-span-9">
             <div class="ml-4 mt-2 place-items-center">
                 <div class="mx-3 inline-flex space-x-6 items-center" >
                     <p class="uppercase font-bold font-inter">Todays Matches</p>
@@ -128,6 +131,7 @@
         
                 <div class="divider my-0 mx-2"></div>
             </div>
+
             <div class="carousel grid grid-flow-col uppercase mb-2 overflow-auto space-x-5" ref="matches">
                 <div v-for="game in sortedGames">
                     <UpcomingMatches v-if="game.status !== 'canceled'"

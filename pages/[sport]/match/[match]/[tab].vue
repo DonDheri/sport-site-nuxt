@@ -29,33 +29,36 @@
         }
     }
     
-    const {data: getStats} = await useAsyncData(() => $fetch(`https://sportscore1.p.rapidapi.com/events/${params.match.toString()}/statistics`, {
+    const {data: getStats, error: errorStats} = await useAsyncData(() => $fetch(`https://sportscore1.p.rapidapi.com/events/${params.match.toString()}/statistics`, {
         method: "GET",
         headers: {
             'X-RapidAPI-Key': (config.public.apiKey as string) || "",
             'X-RapidAPI-Host': 'sportscore1.p.rapidapi.com'
         },
     }));
-    const stats = computed(() => {
-        return getStats.value.data;
-    });
-    console.log(stats.value);
+    // const stats = computed(() => {
+    //     return getStats.value.data;
+    // });
+    
+
+console.log(errorStats.value);
 
 
-
-    const {data: getLineups} = await useAsyncData(() => $fetch(`https://sportscore1.p.rapidapi.com/events/${params.match.toString()}/lineups`, {
+    const {data: getLineups, error: errorLineups} = await useAsyncData(() => $fetch(`https://sportscore1.p.rapidapi.com/events/${params.match.toString()}/lineups`, {
         method: "GET",
         headers: {
             'X-RapidAPI-Key': (config.public.apiKey as string) || "",
             'X-RapidAPI-Host': 'sportscore1.p.rapidapi.com'
         },
+        
     }));
     const lineups = computed(() => {
+        
         return getLineups.value.data;
     });
-    const homeLineup = lineups.value[0];
-    const awayLineup = lineups.value[1];
-    
+    const homeLineup  = lineups.value;
+    const awayLineup = lineups.value;
+    console.log(homeLineup);
     
 </script>
 <template>
@@ -90,8 +93,8 @@
     />
 
     <div v-if="params.tab === 'lineups'">
-        <LineUps
-        :home-formation="homeLineup.formation"
+        <!-- <LineUps
+        :home-formation="lineups[0].formation || 'no formation'"
         :home-overall-rating="homeLineup.avg_rating"
         :home-perf-comp="homeLineup.best_composition"
 
@@ -108,8 +111,8 @@
         :away-technical="Math.round(awayLineup.technical)"
         :away-defending="Math.round(awayLineup.defending)"
         :away-tactical="Math.round(awayLineup.tactical)"
-        >
-            <HomeLineupTable
+        > -->
+            <!-- <HomeLineupTable
             :home-team-name="game.home_team.name"
             >
             <TableRowHome v-for="player in homeLineup.lineup_players"
@@ -132,7 +135,7 @@
             :away-player-rating="player.player.rating"
             />
             </AwayLineupTable>
-        </LineUps>
+        </LineUps> -->
     </div>
     <H2H v-if="params.tab === 'h2h'"
     :game-date="'10/09-2023'"
