@@ -23,11 +23,7 @@
     const game = computed(() => {
         return event.value.data;
     });
-    const teamScore = (score: Number) => {
-        if (score == null || 0) {
-            return 0;
-        }
-    }
+    
     
     const {data: getStats, error: errorStats} = await useAsyncData(() => $fetch(`https://sportscore1.p.rapidapi.com/events/${params.match.toString()}/statistics`, {
         method: "GET",
@@ -36,12 +32,11 @@
             'X-RapidAPI-Host': 'sportscore1.p.rapidapi.com'
         },
     }));
-    // const stats = computed(() => {
-    //     return getStats.value.data;
-    // });
+    const stats = computed(() => {
+        return getStats.value.data;
+    });
     
 
-    console.log(errorStats.value);
 
 
     const {data: getLineups, error: errorLineups} = await useAsyncData(() => $fetch(`https://sportscore1.p.rapidapi.com/events/${params.match.toString()}/lineups`, {
@@ -53,12 +48,10 @@
         
     }));
     const lineups = computed(() => {
-        
         return getLineups.value.data;
     });
     const homeLineup  = lineups.value;
     const awayLineup = lineups.value;
-    console.log(homeLineup);
     
 </script>
 <template>
@@ -137,6 +130,7 @@
             </AwayLineupTable>
         </LineUps>
     </div>
+    
     <H2H v-if="params.tab === 'h2h'"
     :game-date="'10/09-2023'"
     :game-time="'00:00'"

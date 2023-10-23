@@ -11,22 +11,20 @@
         }
     }
     const currentSport = whichSport();
-    
+
     const config = useRuntimeConfig();
-    const {data: event} = await useAsyncData(() => $fetch(`https://sportscore1.p.rapidapi.com/events/${params.match.toString()}`, {
-        method: "GET",
-        headers: {
-            'X-RapidAPI-Key': (config.public.apiKey as string) || "",
-            'X-RapidAPI-Host': 'sportscore1.p.rapidapi.com'
-        },
-    }));
-    const game = computed(() => {
-        return event.value;
-    });
-    
+
     
 </script>
+
 <template>
-    <CurrentMatch/>
     
+
+    <Stats"
+    :home-ball-poss="46"
+    :home-total-shots="14"
+
+    :away-ball-poss="54"
+    :away-total-shots="10"
+    />
 </template>

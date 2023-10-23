@@ -1,18 +1,7 @@
 <script setup lang="ts">
-    import sportsData from "~/data/sportsData.json";
-    const sports = ref(sportsData)
-
     const params = useRoute().params;
-    const whichSport = () => {
-        for (let sport of sports.value) {
-            if (sport.slug.toString() === params.sport) {
-                return sport;
-            }
-        }
-    }
-    const currentSport = whichSport();
-    
     const config = useRuntimeConfig();
+
     const {data: event} = await useAsyncData(() => $fetch(`https://sportscore1.p.rapidapi.com/events/${params.match.toString()}`, {
         method: "GET",
         headers: {
@@ -21,12 +10,20 @@
         },
     }));
     const game = computed(() => {
-        return event.value;
+        return event.value.data;
     });
     
-    
 </script>
+
 <template>
-    <CurrentMatch/>
+    <H2H
+    :game-date="'10/09-2023'"
+    :game-time="'00:00'"
+
+    :home-name="'Home Team'"
+    :home-score="2"
     
+    :away-name="'Away Team'"
+    :away-score="1"
+    />
 </template>

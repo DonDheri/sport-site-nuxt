@@ -50,7 +50,7 @@
         </div> -->
 
         <NuxtLink
-            :to="`/${props.sportSlug}/match/${props.matchId}/statistics`"
+            :to="`/${props.sportSlug}/match/${props.matchId}/lineups`"
             ref="match"
             class="carousel-item flex flex-row p-1 font-inter">
             <div class="grid grid-cols-4 grid-rows-4 gap-3 grid-flow-row w-[150px] h-[115px] font-semibold">
