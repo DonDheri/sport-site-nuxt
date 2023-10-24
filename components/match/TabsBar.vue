@@ -10,9 +10,7 @@
             }
         }
     }
-    const currentSport = whichSport();
-    console.log(useRoute().fullPath.includes(''));
-    
+    const currentSport = whichSport();    
 </script>
 
 <template>

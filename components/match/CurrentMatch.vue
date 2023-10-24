@@ -42,7 +42,7 @@
             </NuxtLink>
 
             <div class="flex flex-col col-span-1 row-span-1 space-y-2">
-            <p class="text-lg">{{ game.home_score || 0 }} - {{ game.away_score || 0 }}</p>
+            <p class="text-lg">{{ game.home_score?.display || 0 }} - {{ game.away_score?.display || 0 }}</p>
             <p class="text-xs">{{  }}</p>
             </div>
 

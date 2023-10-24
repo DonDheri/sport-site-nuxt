@@ -1,40 +1,25 @@
 <script setup lang="ts">
-
-    const d = new Date()
-    const year = d.getFullYear();
-    const month = d.getMonth();
-    const day = d.getDate();
     
-    const { id } = useRoute().params;
-    const requestId = id as string || "";
+    const params = useRoute().params;
     const config = useRuntimeConfig();
-    // const { data, } = await useAsyncData<any>(() => $fetch(`https://api-basketball.p.rapidapi.com/games`, {
-    //     headers: {
-    //         'X-RapidAPI-Key': (config.public.apiKey as string) || '',
-    //         'X-RapidAPI-Host': 'api-basketball.p.rapidapi.com'
-    //     },
-    //     params: {
-    //         season: `${(year-1).toString()}-${year.toString()}`,
-            
-    //     },
-    // }))
-
-    // const matches = computed(() => {
-    //     return data.value?.response;
-    // })
+    const { data } = await useAsyncData(() => $fetch(`https://sportscore1.p.rapidapi.com/events/${params.match}/statistics`, {
+        headers: {
+            'X-RapidAPI-Key': (config.public.apiKey as string) || '',
+            'X-RapidAPI-Host': 'api-basketball.p.rapidapi.com'
+        },
+    }))
+    const stats = computed(() => {
+        return data.value;
+    });
     
-    const props = defineProps({
-        homeBallPoss: Number,
-        homeTotalShots: Number,
 
-        awayBallPoss: Number,
-        awayTotalShots: Number,
-    })
+
+    
     
 </script>
 
 <template>
-    <div class="flex place-content-center">
+    <div v-if="stats !== null" class="flex place-content-center">
         
         <table class="table text-center text-md table-auto border-collapse font-inter font-bold lg:table-lg lg:w-1/2">
             <thead>
@@ -46,16 +31,20 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>{{ homeBallPoss }}%</td>
+                    <td>{{  }}%</td>
                     <td>Ball Possession</td>
-                    <td>{{ awayBallPoss }}%</td>
+                    <td>{{  }}%</td>
                 </tr>
                 <tr>
-                    <td>{{ homeTotalShots }}</td>
+                    <td>{{  }}</td>
                     <td>Total Shots</td>
-                    <td>{{ awayTotalShots }}</td>
+                    <td>{{  }}</td>
                 </tr>
             </tbody>
         </table>
+    </div>
+
+    <div v-if="stats === null">
+        <p class="text-md text-center">No statistics data provided.</p>
     </div>
 </template>

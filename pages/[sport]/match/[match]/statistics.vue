@@ -18,13 +18,9 @@
 </script>
 
 <template>
-    
+    <CurrentMatch/>
 
-    <Stats"
-    :home-ball-poss="46"
-    :home-total-shots="14"
+    <TabsBar/>
 
-    :away-ball-poss="54"
-    :away-total-shots="10"
-    />
+    <Stats/>
 </template>

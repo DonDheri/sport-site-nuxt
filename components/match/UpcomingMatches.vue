@@ -1,8 +1,4 @@
-<script setup lang="ts">
-    import sportsData from "~/data/sportsData.json"
-    import VueDatePicker from "@vuepic/vue-datepicker";
-    
-    
+<script setup lang="ts">    
     const matches = ref([Object]);
     const match = ref();
     

@@ -129,8 +129,8 @@
                         <tr v-for="player in homeMissingPlayers">
                             <td class="py-1 px-1"></td>
                             <td class="py-1 px-1 text-start">{{ player.player.name }}</td>
-                            <td class="py-1 px-1">{{ player.player.age }}</td>
                             <td class="py-1 px-1">{{ player.player.position }}</td>
+                            <td class="py-1 px-1">{{ player.player.age }}</td>
                             <td class="py-1 px-1">{{ player.player.rating }}</td>
                         </tr>
                     </tbody>
@@ -178,8 +178,8 @@
                         <tr v-for="player in awayMissingPlayers">
                             <td class="py-1 px-1"></td>
                             <td class="py-1 px-1 text-start">{{ player.player.name }}</td>
-                            <td class="py-1 px-1">{{ player.player.age }}</td>
                             <td class="py-1 px-1">{{ player.player.position }}</td>
+                            <td class="py-1 px-1">{{ player.player.age }}</td>
                             <td class="py-1 px-1">{{ player.player.rating }}</td>
                         </tr>
                     </tbody>
