@@ -32,5 +32,7 @@ export default defineNuxtConfig({
     ]
   },
   
-    
+  plugins: [
+    '~/plugins/fetch.js'
+  ]
 })
