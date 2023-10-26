@@ -1,5 +1,5 @@
 export default defineNuxtPlugin({
-    function ({ app }) {
-        app.fetch = fetch;
-    }
+  function ({ app }) {
+      app.fetch = fetch;
+  }
 })

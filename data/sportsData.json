@@ -16,39 +16,7 @@
           "it":"Calcio",
           "nl":"Voetbal",
           "pt":"Futebol"
-       },
-       "popular_leagues": [
-         {
-            "name": "Premier League",
-            "country": "England",
-            "id": 317
-         },
-         {
-            "name": "La Liga",
-            "country": "Spain",
-            "id": 32
-         },
-         {
-            "name": "Ligue 1",
-            "country": "France",
-            "id": 86
-         },
-         {
-            "name": "Bundesliga",
-            "country": "Germany",
-            "id": 88
-         },
-         {
-            "name": "Serie A",
-            "country": "Italy",
-            "id": 101
-         },
-         {
-            "name": "Superligaen",
-            "country": "Denmark",
-            "id": 79
-         }
-       ]
+       }
     },
     {
        "id":2,

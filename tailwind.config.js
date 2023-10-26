@@ -24,9 +24,6 @@ module.exports = {
       borderRadius: {
         '4xl': '2rem',
       },
-      fontFamily: {
-        custom: ['inter']
-      }
     },
   },
   variants: {
@@ -34,7 +31,7 @@ module.exports = {
   },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: ["light", "dark", "night"],
+    themes: ["dark"],
     darkTheme: "dark",
     base: true,
     styled: true,

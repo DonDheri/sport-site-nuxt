@@ -1,0 +1,17 @@
+[
+    {
+       "name": "Premier League",
+       "country": "England",
+       "id": 317
+    },
+    {
+       "name": "La Liga",
+       "country": "Spain",
+       "id": 251
+    },
+    {
+       "name": "Ligue 1",
+       "country": "France",
+       "id": 498
+    }
+   ]
