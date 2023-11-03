@@ -27,11 +27,11 @@
 
         homeLogo: String,
         homeNameShort: String,
-        homeScore: String || Number,
+        homeScore: Number,
         
         awayLogo: String,
         awayNameShort: String,
-        awayScore: String || Number
+        awayScore: Number
     })
     
         
@@ -39,11 +39,7 @@
 </script>
 
 <template>
-        <!-- <div class="mx-3 inline-flex space-x-6 items-center" >
-            <p class="uppercase font-bold font-inter">Todays Matches</p>
-            <p>-</p>
-            <VueDatePicker v-model="date" :enable-time-picker="false" style="width: 150px;" :auto-apply="true" :format="formattedDate" dark/>
-        </div> -->
+        
 
         <NuxtLink
             :to="`/${props.sportSlug}/match/${props.matchId}/lineups`"

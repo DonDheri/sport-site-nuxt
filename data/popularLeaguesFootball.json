@@ -1,0 +1,1096 @@
+[
+   {
+      "id": 317,
+      "sport_id": 1,
+      "section_id": 40,
+      "slug": "england-premier-league",
+      "name_translations": {
+         "en": "Premier League",
+         "ru": "Премьер-Лига"
+      },
+      "has_logo": true,
+      "logo": "https://tipsscore.com/resb/league/england-premier-league.png",
+      "start_date": "2023-08-11 19:00:00",
+      "end_date": "2024-05-19 00:00:00",
+      "priority": 300,
+      "host": {
+         "country": "England",
+         "flag": "england"
+      },
+      "tennis_points": 0,
+      "facts": [
+         {
+         "name": "Division level",
+         "value": "1"
+         },
+         {
+         "name": "Number of rounds",
+         "value": "38"
+         },
+         {
+         "name": "Average goals",
+         "value": "3.03"
+         },
+         {
+         "name": "Home team wins",
+         "value": "43%"
+         },
+         {
+         "name": "Draws",
+         "value": "21%"
+         },
+         {
+         "name": "Away team wins",
+         "value": "36%"
+         },
+         {
+         "name": "Yellow cards",
+         "value": "4.87"
+         },
+         {
+         "name": "Red cards",
+         "value": "0.23"
+         }
+      ],
+      "most_count": 20,
+      "most_team": {
+         "id": 138,
+         "sport_id": 1,
+         "category_id": 40,
+         "venue_id": 81,
+         "manager_id": 709,
+         "slug": "manchester-united",
+         "name": "Manchester United",
+         "has_logo": true,
+         "logo": "https://tipsscore.com/resb/team/manchester-united.png",
+         "name_translations": {
+         "en": "Manchester United",
+         "ru": "Манчестер Юнайтед",
+         "de": "Manchester United FC",
+         "es": "Manchester United FC",
+         "fr": "Manchester United FC",
+         "zh": "曼联",
+         "tr": "Manchester United FC",
+         "el": "Μάντσεστερ Γιουν.",
+         "it": "Manchester United FC",
+         "nl": "Manchester United FC",
+         "pt": "Manchester United FC"
+         },
+         "name_short": "Man Utd",
+         "name_full": "Manchester United",
+         "name_code": "MUN",
+         "has_sub": false,
+         "gender": "M",
+         "is_nationality": false,
+         "country_code": "ENG",
+         "country": "England",
+         "flag": "england",
+         "foundation": null
+      },
+      "title_holder_team": {
+         "id": 4817,
+         "sport_id": 1,
+         "category_id": 40,
+         "venue_id": 1789,
+         "manager_id": 1821,
+         "slug": "manchester-city",
+         "name": "Manchester City",
+         "has_logo": true,
+         "logo": "https://tipsscore.com/resb/team/manchester-city.png",
+         "name_translations": {
+         "en": "Manchester City",
+         "ru": "Манчестер Сити",
+         "de": "Manchester City FC",
+         "es": "Manchester City FC",
+         "fr": "Manchester City FC",
+         "zh": "曼城",
+         "tr": "Manchester City FC",
+         "el": "Μάντσεστερ Σίτι",
+         "it": "Manchester City FC",
+         "nl": "Manchester City FC",
+         "pt": "Manchester City FC"
+         },
+         "name_short": "Man City",
+         "name_full": "Manchester City",
+         "name_code": "MCI",
+         "has_sub": false,
+         "gender": "M",
+         "is_nationality": false,
+         "country_code": "ENG",
+         "country": "England",
+         "flag": "england",
+         "foundation": null
+      }
+   },
+   {
+      "id": 251,
+      "sport_id": 1,
+      "section_id": 32,
+      "slug": "spain-laliga",
+      "name_translations": {
+         "en": "LaLiga",
+         "ru": "Ла Лига"
+      },
+      "has_logo": true,
+      "logo": "https://tipsscore.com/resb/league/spain-laliga.png",
+      "start_date": "2023-08-11 17:30:00",
+      "end_date": "2024-05-26 00:00:00",
+      "priority": 295,
+      "host": {
+         "country": "Spain",
+         "flag": "spain"
+      },
+      "tennis_points": 0,
+      "facts": [
+         {
+         "name": "Division level",
+         "value": "1"
+         },
+         {
+         "name": "Number of rounds",
+         "value": "38"
+         },
+         {
+         "name": "Average goals",
+         "value": "2.84"
+         },
+         {
+         "name": "Home team wins",
+         "value": "43%"
+         },
+         {
+         "name": "Draws",
+         "value": "29%"
+         },
+         {
+         "name": "Away team wins",
+         "value": "28%"
+         },
+         {
+         "name": "Yellow cards",
+         "value": "5.30"
+         },
+         {
+         "name": "Red cards",
+         "value": "0.29"
+         }
+      ],
+      "most_count": 34,
+      "most_team": {
+         "id": 139,
+         "sport_id": 1,
+         "category_id": 32,
+         "venue_id": 82,
+         "manager_id": 1825,
+         "slug": "real-madrid",
+         "name": "Real Madrid",
+         "has_logo": true,
+         "logo": "https://tipsscore.com/resb/team/real-madrid.png",
+         "name_translations": {
+         "en": "Real Madrid",
+         "ru": "Реал Мадрид",
+         "de": "Real Madrid",
+         "es": "Real Madrid CF",
+         "fr": "Real Madrid",
+         "zh": "皇家马德里",
+         "tr": "Real Madrid",
+         "el": "Ρεάλ Μαδρίτης",
+         "it": "Real Madrid",
+         "nl": "Real Madrid",
+         "pt": "Real Madrid CF"
+         },
+         "name_short": "Real Madrid",
+         "name_full": "Real Madrid",
+         "name_code": "RMA",
+         "has_sub": false,
+         "gender": "M",
+         "is_nationality": false,
+         "country_code": "ESP",
+         "country": "Spain",
+         "flag": "spain",
+         "foundation": null
+      },
+      "title_holder_team": {
+         "id": 11,
+         "sport_id": 1,
+         "category_id": 32,
+         "venue_id": 20102,
+         "manager_id": 645,
+         "slug": "barcelona",
+         "name": "Barcelona",
+         "has_logo": true,
+         "logo": "https://tipsscore.com/resb/team/barcelona.png",
+         "name_translations": {
+         "en": "Barcelona",
+         "ru": "Барселона",
+         "de": "FC Barcelona",
+         "es": "FC Barcelona",
+         "fr": "FC Barcelone",
+         "zh": "巴塞罗那",
+         "tr": "FC Barcelona",
+         "el": "Μπαρτσελόνα",
+         "it": "Barcellona",
+         "nl": "FC Barcelona",
+         "pt": "FC Barcelona"
+         },
+         "name_short": "Barcelona",
+         "name_full": "Barcelona",
+         "name_code": "FCB",
+         "has_sub": false,
+         "gender": "M",
+         "is_nationality": false,
+         "country_code": "ESP",
+         "country": "Spain",
+         "flag": "spain",
+         "foundation": null
+      }
+   },
+   {
+      "id": 442,
+      "sport_id": 1,
+      "section_id": 75,
+      "slug": "china-cfa-super-league",
+      "name_translations": {
+         "en": "CFA Super League",
+         "ru": "CFA Суперлига"
+      },
+      "has_logo": true,
+      "logo": "https://tipsscore.com/resb/league/china-cfa-super-league.png",
+      "start_date": "2023-04-15 11:35:00",
+      "end_date": "2023-11-04 00:00:00",
+      "priority": 0,
+      "host": {
+         "country": "China",
+         "flag": "china"
+      },
+      "tennis_points": 0,
+      "facts": [
+         {
+         "name": "Division level",
+         "value": "1"
+         },
+         {
+         "name": "Number of rounds",
+         "value": "30"
+         },
+         {
+         "name": "Average goals",
+         "value": "2.74"
+         },
+         {
+         "name": "Home team wins",
+         "value": "45%"
+         },
+         {
+         "name": "Draws",
+         "value": "28%"
+         },
+         {
+         "name": "Away team wins",
+         "value": "27%"
+         },
+         {
+         "name": "Yellow cards",
+         "value": "3.87"
+         },
+         {
+         "name": "Red cards",
+         "value": "0.25"
+         }
+      ],
+      "most_count": 8,
+      "most_team": {
+         "id": 6263,
+         "sport_id": 1,
+         "category_id": 75,
+         "venue_id": 2307,
+         "manager_id": 11826,
+         "slug": "guangzhou-evergrande-taobao",
+         "name": "Guangzhou FC",
+         "has_logo": true,
+         "logo": "https://tipsscore.com/resb/team/guangzhou-evergrande-taobao.png",
+         "name_translations": {
+         "en": "Guangzhou FC",
+         "ru": "Гуангжу Эвергранд",
+         "de": "Guangzhou Evergrande",
+         "es": "Guangzhou Evergrande",
+         "fr": "Guangzhou Evergrande",
+         "zh": "广州",
+         "tr": "Guangzhou FC",
+         "el": "Γκουανζού Εβεργκράντε",
+         "nl": "Guangzhou FC",
+         "pt": "Guangzhou Evergrande FC",
+         "it": "Guangzhou Evergrande"
+         },
+         "name_short": "Guangzhou",
+         "name_full": "Guangzhou FC",
+         "name_code": "GUA",
+         "has_sub": false,
+         "gender": "M",
+         "is_nationality": false,
+         "country_code": "CHN",
+         "country": "China",
+         "flag": "china",
+         "foundation": "1977-10-26 00:00:00"
+      },
+      "title_holder_team": {
+         "id": 6302,
+         "sport_id": 1,
+         "category_id": 75,
+         "venue_id": 12001,
+         "manager_id": 11729,
+         "slug": "wuhan-three-towns",
+         "name": "Wuhan Three Towns",
+         "has_logo": true,
+         "logo": "https://tipsscore.com/resb/team/wuhan-three-towns.png",
+         "name_translations": {
+         "en": "Wuhan Three Towns",
+         "ru": "Ухань Саньчжэнь",
+         "de": "Wuhan Three Towns FC",
+         "es": "Wuhan Three Towns FC",
+         "zh": "武汉三镇",
+         "nl": "Wuhan Three Towns FC",
+         "pt": "Wuhan Three Towns FC",
+         "tr": "Wuhan Three Towns FC",
+         "el": "3 Τάουνς"
+         },
+         "name_short": "Three Towns",
+         "name_full": "Wuhan Three Towns",
+         "name_code": "WUH",
+         "has_sub": false,
+         "gender": "M",
+         "is_nationality": false,
+         "country_code": "CHN",
+         "country": "China",
+         "flag": "china",
+         "foundation": null
+      }
+   },
+   {
+      "id": 498,
+      "sport_id": 1,
+      "section_id": 86,
+      "slug": "france-ligue-1",
+      "name_translations": {
+         "en": "Ligue 1",
+         "ru": "Лига 1"
+      },
+      "has_logo": true,
+      "logo": "https://tipsscore.com/resb/league/france-ligue-1.png",
+      "start_date": "2023-08-11 19:00:00",
+      "end_date": "2024-06-03 00:00:00",
+      "priority": 250,
+      "host": {
+         "country": "France",
+         "flag": "france"
+      },
+      "tennis_points": 0,
+      "facts": [
+         {
+         "name": "Division level",
+         "value": "1"
+         },
+         {
+         "name": "Number of rounds",
+         "value": "38"
+         },
+         {
+         "name": "Average goals",
+         "value": "2.68"
+         },
+         {
+         "name": "Home team wins",
+         "value": "40%"
+         },
+         {
+         "name": "Draws",
+         "value": "33%"
+         },
+         {
+         "name": "Away team wins",
+         "value": "27%"
+         },
+         {
+         "name": "Yellow cards",
+         "value": "3.77"
+         },
+         {
+         "name": "Red cards",
+         "value": "0.09"
+         }
+      ],
+      "most_count": 10,
+      "most_team": {
+         "id": 6885,
+         "sport_id": 1,
+         "category_id": 86,
+         "venue_id": 2564,
+         "manager_id": 3548,
+         "slug": "paris-saint-germain",
+         "name": "Paris Saint-Germain",
+         "has_logo": true,
+         "logo": "https://tipsscore.com/resb/team/paris-saint-germain.png",
+         "name_translations": {
+         "en": "Paris Saint-Germain",
+         "ru": "Пари Сен-Жермен",
+         "de": "Paris Saint-Germain FC",
+         "es": "Paris Saint-Germain FC",
+         "fr": "Paris Saint-Germain",
+         "zh": "巴黎圣日尔曼",
+         "tr": "Paris St. Germain",
+         "el": "Παρί Σεν Ζερμέν",
+         "it": "Paris Saint-Germain",
+         "nl": "Paris Saint-Germain FC",
+         "pt": "Paris Saint-Germain FC"
+         },
+         "name_short": "PSG",
+         "name_full": "Paris Saint-Germain",
+         "name_code": "PSG",
+         "has_sub": false,
+         "gender": "M",
+         "is_nationality": false,
+         "country_code": "FRA",
+         "country": "France",
+         "flag": "france",
+         "foundation": "1970-08-12 00:00:00"
+      },
+      "title_holder_team": {
+         "id": 6885,
+         "sport_id": 1,
+         "category_id": 86,
+         "venue_id": 2564,
+         "manager_id": 3548,
+         "slug": "paris-saint-germain",
+         "name": "Paris Saint-Germain",
+         "has_logo": true,
+         "logo": "https://tipsscore.com/resb/team/paris-saint-germain.png",
+         "name_translations": {
+         "en": "Paris Saint-Germain",
+         "ru": "Пари Сен-Жермен",
+         "de": "Paris Saint-Germain FC",
+         "es": "Paris Saint-Germain FC",
+         "fr": "Paris Saint-Germain",
+         "zh": "巴黎圣日尔曼",
+         "tr": "Paris St. Germain",
+         "el": "Παρί Σεν Ζερμέν",
+         "it": "Paris Saint-Germain",
+         "nl": "Paris Saint-Germain FC",
+         "pt": "Paris Saint-Germain FC"
+         },
+         "name_short": "PSG",
+         "name_full": "Paris Saint-Germain",
+         "name_code": "PSG",
+         "has_sub": false,
+         "gender": "M",
+         "is_nationality": false,
+         "country_code": "FRA",
+         "country": "France",
+         "flag": "france",
+         "foundation": "1970-08-12 00:00:00"
+      }
+   },
+   {
+      "id": 512,
+      "sport_id": 1,
+      "section_id": 88,
+      "slug": "germany-bundesliga",
+      "name_translations": {
+         "en": "Bundesliga",
+         "ru": "Бундеслига"
+      },
+      "has_logo": true,
+      "logo": "https://tipsscore.com/resb/league/germany-bundesliga.png",
+      "start_date": "2023-08-18 18:30:00",
+      "end_date": "2024-05-28 00:00:00",
+      "priority": 280,
+      "host": {
+         "country": "Germany",
+         "flag": "germany"
+      },
+      "tennis_points": 0,
+      "facts": [
+         {
+         "name": "Division level",
+         "value": "1"
+         },
+         {
+         "name": "Number of rounds",
+         "value": "34"
+         },
+         {
+         "name": "Average goals",
+         "value": "3.67"
+         },
+         {
+         "name": "Home team wins",
+         "value": "49%"
+         },
+         {
+         "name": "Draws",
+         "value": "19%"
+         },
+         {
+         "name": "Away team wins",
+         "value": "32%"
+         },
+         {
+         "name": "Yellow cards",
+         "value": "4.20"
+         },
+         {
+         "name": "Red cards",
+         "value": "0.20"
+         }
+      ],
+      "most_count": 31,
+      "most_team": {
+         "id": 142,
+         "sport_id": 1,
+         "category_id": 88,
+         "venue_id": 85,
+         "manager_id": 2530,
+         "slug": "bayern-munchen",
+         "name": "FC Bayern München",
+         "has_logo": true,
+         "logo": "https://tipsscore.com/resb/team/bayern-munchen.png",
+         "name_translations": {
+         "en": "FC Bayern München",
+         "ru": "Бавария Мюнхен",
+         "de": "FC Bayern München",
+         "es": "Bayern Múnich",
+         "fr": "Bayern Munich",
+         "zh": "拜仁慕尼黑",
+         "tr": "Bayern Munich",
+         "el": "Μπάγερν",
+         "it": "Bayern Monaco",
+         "nl": "Bayern München",
+         "pt": "Bayern Munique"
+         },
+         "name_short": "Bayern",
+         "name_full": "FC Bayern München",
+         "name_code": "BAY",
+         "has_sub": false,
+         "gender": "M",
+         "is_nationality": false,
+         "country_code": "DEU",
+         "country": "Germany",
+         "flag": "germany",
+         "foundation": null
+      },
+      "title_holder_team": {
+         "id": 142,
+         "sport_id": 1,
+         "category_id": 88,
+         "venue_id": 85,
+         "manager_id": 2530,
+         "slug": "bayern-munchen",
+         "name": "FC Bayern München",
+         "has_logo": true,
+         "logo": "https://tipsscore.com/resb/team/bayern-munchen.png",
+         "name_translations": {
+         "en": "FC Bayern München",
+         "ru": "Бавария Мюнхен",
+         "de": "FC Bayern München",
+         "es": "Bayern Múnich",
+         "fr": "Bayern Munich",
+         "zh": "拜仁慕尼黑",
+         "tr": "Bayern Munich",
+         "el": "Μπάγερν",
+         "it": "Bayern Monaco",
+         "nl": "Bayern München",
+         "pt": "Bayern Munique"
+         },
+         "name_short": "Bayern",
+         "name_full": "FC Bayern München",
+         "name_code": "BAY",
+         "has_sub": false,
+         "gender": "M",
+         "is_nationality": false,
+         "country_code": "DEU",
+         "country": "Germany",
+         "flag": "germany",
+         "foundation": null
+      }
+   },
+   {
+      "id": 592,
+      "sport_id": 1,
+      "section_id": 101,
+      "slug": "italy-serie-a",
+      "name_translations": {
+         "en": "Serie A",
+         "ru": "Серия А"
+      },
+      "has_logo": true,
+      "logo": "https://tipsscore.com/resb/league/italy-serie-a.png",
+      "start_date": "2023-08-19 16:30:00",
+      "end_date": "2024-05-26 00:00:00",
+      "priority": 290,
+      "host": {
+         "country": "Italy",
+         "flag": "italy"
+      },
+      "tennis_points": 0,
+      "facts": [
+         {
+         "name": "Division level",
+         "value": "1"
+         },
+         {
+         "name": "Number of rounds",
+         "value": "38"
+         },
+         {
+         "name": "Average goals",
+         "value": "2.57"
+         },
+         {
+         "name": "Home team wins",
+         "value": "43%"
+         },
+         {
+         "name": "Draws",
+         "value": "27%"
+         },
+         {
+         "name": "Away team wins",
+         "value": "30%"
+         },
+         {
+         "name": "Yellow cards",
+         "value": "4.43"
+         },
+         {
+         "name": "Red cards",
+         "value": "0.16"
+         }
+      ],
+      "most_count": 36,
+      "most_team": {
+         "id": 145,
+         "sport_id": 1,
+         "category_id": 101,
+         "venue_id": 88,
+         "manager_id": 7051,
+         "slug": "juventus",
+         "name": "Juventus",
+         "has_logo": true,
+         "logo": "https://tipsscore.com/resb/team/juventus.png",
+         "name_translations": {
+         "en": "Juventus",
+         "ru": "Ювентус",
+         "de": "Juventus Turin",
+         "es": "Juventus Turín",
+         "fr": "Juventus Turin",
+         "zh": "尤文图斯",
+         "tr": "Juventus Turin",
+         "el": "Γιουβέντους",
+         "it": "Juventus Turin",
+         "nl": "Juventus Turin",
+         "pt": "Juventus FC"
+         },
+         "name_short": "Juventus",
+         "name_full": "Juventus",
+         "name_code": "JUV",
+         "has_sub": false,
+         "gender": "M",
+         "is_nationality": false,
+         "country_code": "ITA",
+         "country": "Italy",
+         "flag": "italy",
+         "foundation": null
+      },
+      "title_holder_team": {
+         "id": 8142,
+         "sport_id": 1,
+         "category_id": 101,
+         "venue_id": 2954,
+         "manager_id": 2540,
+         "slug": "napoli",
+         "name": "Napoli",
+         "has_logo": true,
+         "logo": "https://tipsscore.com/resb/team/napoli.png",
+         "name_translations": {
+         "en": "Napoli",
+         "ru": "Наполи",
+         "de": "SSC Neapel",
+         "es": "SSC Nápoles",
+         "fr": "SSC Naples",
+         "zh": "那不勒斯",
+         "tr": "SSC Napoli",
+         "el": "Νάπολι",
+         "it": "Napoli",
+         "nl": "SSC Napoli",
+         "pt": "Nápoles"
+         },
+         "name_short": "Napoli",
+         "name_full": "Napoli",
+         "name_code": "NAP",
+         "has_sub": false,
+         "gender": "M",
+         "is_nationality": false,
+         "country_code": "ITA",
+         "country": "Italy",
+         "flag": "italy",
+         "foundation": null
+      }
+   },
+   {
+      "id": 99,
+      "sport_id": 1,
+      "section_id": 13,
+      "slug": "usa-mls",
+      "name_translations": {
+         "en": "MLS",
+         "ru": "MLS"
+      },
+      "has_logo": true,
+      "logo": "https://tipsscore.com/resb/league/usa-mls.png",
+      "start_date": "2023-02-25 21:30:00",
+      "end_date": "2023-12-10 00:00:00",
+      "priority": 0,
+      "host": {
+         "country": "USA",
+         "flag": "usa"
+      },
+      "tennis_points": 0,
+      "facts": [
+         {
+         "name": "Division level",
+         "value": "1"
+         },
+         {
+         "name": "Number of rounds",
+         "value": "34"
+         },
+         {
+         "name": "Average goals",
+         "value": "2.77"
+         },
+         {
+         "name": "Home team wins",
+         "value": "48%"
+         },
+         {
+         "name": "Draws",
+         "value": "29%"
+         },
+         {
+         "name": "Away team wins",
+         "value": "23%"
+         },
+         {
+         "name": "Yellow cards",
+         "value": "4.29"
+         },
+         {
+         "name": "Red cards",
+         "value": "0.16"
+         }
+      ],
+      "most_count": 5,
+      "most_team": {
+         "id": 1548,
+         "sport_id": 1,
+         "category_id": 13,
+         "venue_id": 691,
+         "manager_id": 564,
+         "slug": "la-galaxy",
+         "name": "LA Galaxy",
+         "has_logo": true,
+         "logo": "https://tipsscore.com/resb/team/la-galaxy.png",
+         "name_translations": {
+         "en": "LA Galaxy",
+         "ru": "Лос Анджелес Гэлэкси",
+         "de": "Los Angeles Galaxy",
+         "es": "LA Galaxy",
+         "fr": "Los Angeles",
+         "zh": "洛杉矶银河",
+         "tr": "Los Angeles Galaxy",
+         "el": "Λος Άντζελες",
+         "it": "LA Galaxy",
+         "nl": "LA Galaxy",
+         "pt": "LA Galaxy"
+         },
+         "name_short": "LA Galaxy",
+         "name_full": "LA Galaxy",
+         "name_code": "LAG",
+         "has_sub": false,
+         "gender": "M",
+         "is_nationality": false,
+         "country_code": "USA",
+         "country": "USA",
+         "flag": "usa",
+         "foundation": "1995-10-17 00:00:00"
+      },
+      "title_holder_team": {
+         "id": 1547,
+         "sport_id": 1,
+         "category_id": 13,
+         "venue_id": 690,
+         "manager_id": 6947,
+         "slug": "los-angeles-fc",
+         "name": "Los Angeles FC",
+         "has_logo": true,
+         "logo": "https://tipsscore.com/resb/team/los-angeles-fc.png",
+         "name_translations": {
+         "en": "Los Angeles FC",
+         "ru": "Лос-Анджелес ФК",
+         "de": "Los Angeles FC",
+         "zh": "洛杉矶足球俱乐部",
+         "el": "Λος Άντζελες",
+         "pt": "Los Angeles FC",
+         "es": "LAFC",
+         "it": "Los Angeles"
+         },
+         "name_short": "Los Angeles",
+         "name_full": "Los Angeles FC",
+         "name_code": "LAN",
+         "has_sub": false,
+         "gender": "M",
+         "is_nationality": false,
+         "country_code": "USA",
+         "country": "USA",
+         "flag": "usa",
+         "foundation": "2014-10-30 00:00:00"
+      }
+   },
+   {
+      "id": 133,
+      "sport_id": 1,
+      "section_id": 18,
+      "slug": "netherlands-eredivisie",
+      "name_translations": {
+         "en": "Eredivisie",
+         "ru": "Высший дивизион"
+      },
+      "has_logo": true,
+      "logo": "https://tipsscore.com/resb/league/netherlands-eredivisie.png",
+      "start_date": "2023-08-11 18:00:00",
+      "end_date": "2024-06-02 00:00:00",
+      "priority": 0,
+      "host": {
+         "country": "Netherlands",
+         "flag": "netherlands"
+      },
+      "tennis_points": 0,
+      "facts": [
+         {
+         "name": "Division level",
+         "value": "1"
+         },
+         {
+         "name": "Number of rounds",
+         "value": "34"
+         },
+         {
+         "name": "Average goals",
+         "value": "3.16"
+         },
+         {
+         "name": "Home team wins",
+         "value": "49%"
+         },
+         {
+         "name": "Draws",
+         "value": "21%"
+         },
+         {
+         "name": "Away team wins",
+         "value": "30%"
+         },
+         {
+         "name": "Yellow cards",
+         "value": "3.44"
+         },
+         {
+         "name": "Red cards",
+         "value": "0.18"
+         }
+      ],
+      "most_count": 35,
+      "most_team": {
+         "id": 2002,
+         "sport_id": 1,
+         "category_id": 18,
+         "venue_id": 792,
+         "manager_id": 12743,
+         "slug": "ajax",
+         "name": "Ajax",
+         "has_logo": true,
+         "logo": "https://tipsscore.com/resb/team/ajax.png",
+         "name_translations": {
+         "en": "Ajax",
+         "ru": "Аякс",
+         "de": "Ajax Amsterdam",
+         "es": "Ajax Ámsterdam",
+         "fr": "Ajax Amsterdam",
+         "zh": "阿贾克斯",
+         "tr": "Ajax Amsterdam",
+         "el": "Άγιαξ",
+         "it": "Ajax",
+         "nl": "Ajax",
+         "pt": "FC Ajax"
+         },
+         "name_short": "Ajax",
+         "name_full": "Ajax",
+         "name_code": "AJA",
+         "has_sub": false,
+         "gender": "M",
+         "is_nationality": false,
+         "country_code": "NLD",
+         "country": "Netherlands",
+         "flag": "netherlands",
+         "foundation": null
+      },
+      "title_holder_team": {
+         "id": 2004,
+         "sport_id": 1,
+         "category_id": 18,
+         "venue_id": 794,
+         "manager_id": 710,
+         "slug": "feyenoord",
+         "name": "Feyenoord",
+         "has_logo": true,
+         "logo": "https://tipsscore.com/resb/team/feyenoord.png",
+         "name_translations": {
+         "en": "Feyenoord",
+         "ru": "Фейеноорд Роттердам",
+         "de": "Feyenoord Rotterdam",
+         "es": "Feyenoord Rotterdam",
+         "fr": "Feyenoord Rotterdam",
+         "zh": "费耶诺德",
+         "tr": "Feyenoord Rotterdam",
+         "el": "Φέγενορντ",
+         "it": "Feyenoord",
+         "nl": "Feyenoord",
+         "pt": "Feyenoord"
+         },
+         "name_short": "Feyenoord",
+         "name_full": "Feyenoord",
+         "name_code": "FEY",
+         "has_sub": false,
+         "gender": "M",
+         "is_nationality": false,
+         "country_code": "NLD",
+         "country": "Netherlands",
+         "flag": "netherlands",
+         "foundation": null
+      }
+   },
+   {
+      "id": 893,
+      "sport_id": 1,
+      "section_id": 135,
+      "slug": "brazil-carioca-serie-a",
+      "name_translations": {
+         "en": "Carioca, Série A",
+         "ru": "Кариока, Сери А"
+      },
+      "has_logo": true,
+      "logo": "https://tipsscore.com/resb/league/brazil-carioca-serie-a.png",
+      "start_date": "2019-12-22 18:00:00",
+      "end_date": "2020-05-11 00:00:00",
+      "priority": 0,
+      "host": {
+         "country": "Brazil",
+         "flag": "brazil"
+      },
+      "tennis_points": 0,
+      "facts": [
+         {
+         "name": "Average goals",
+         "value": "2.54"
+         },
+         {
+         "name": "Home team wins",
+         "value": "47%"
+         },
+         {
+         "name": "Draws",
+         "value": "22%"
+         },
+         {
+         "name": "Away team wins",
+         "value": "31%"
+         },
+         {
+         "name": "Yellow cards",
+         "value": "5.06"
+         },
+         {
+         "name": "Red cards",
+         "value": "0.33"
+         }
+      ],
+      "most_count": 37,
+      "most_team": {
+         "id": 9601,
+         "sport_id": 1,
+         "category_id": 135,
+         "venue_id": 3408,
+         "manager_id": 3558,
+         "slug": "flamengo",
+         "name": "Flamengo",
+         "has_logo": true,
+         "logo": "https://tipsscore.com/resb/team/flamengo.png",
+         "name_translations": {
+         "en": "Flamengo",
+         "ru": "ФК Фламенго РЖ",
+         "de": "CR Flamengo RJ",
+         "es": "CR Flamengo RJ",
+         "fr": "CR Flamengo RJ",
+         "zh": "RJ弗拉门戈",
+         "tr": "CR Flamengo RJ",
+         "el": "Φλαμένγκο",
+         "it": "CR Flamengo RJ",
+         "nl": "CR Flamengo RJ",
+         "pt": "CR Flamengo RJ"
+         },
+         "name_short": "Flamengo",
+         "name_full": "Flamengo",
+         "name_code": "FLA",
+         "has_sub": false,
+         "gender": "M",
+         "is_nationality": false,
+         "country_code": "BRA",
+         "country": "Brazil",
+         "flag": "brazil",
+         "foundation": null
+      },
+      "title_holder_team": {
+         "id": 9604,
+         "sport_id": 1,
+         "category_id": 135,
+         "venue_id": 3408,
+         "manager_id": 3620,
+         "slug": "fluminense",
+         "name": "Fluminense",
+         "has_logo": true,
+         "logo": "https://tipsscore.com/resb/team/fluminense.png",
+         "name_translations": {
+         "en": "Fluminense",
+         "ru": "Флуминенсе",
+         "de": "Fluminense FC RJ",
+         "es": "Fluminense RJ",
+         "fr": "FC Fluminense",
+         "zh": "RJ弗鲁米嫩塞",
+         "tr": "Fluminense FC RJ",
+         "el": "Φλουμινένσε",
+         "it": "Fluminense",
+         "nl": "Fluminense FC RJ",
+         "pt": "Fluminense RJ"
+         },
+         "name_short": "Fluminense",
+         "name_full": "Fluminense",
+         "name_code": "FLU",
+         "has_sub": false,
+         "gender": "M",
+         "is_nationality": false,
+         "country_code": "BRA",
+         "country": "Brazil",
+         "flag": "brazil",
+         "foundation": null
+      }
+   }
+]
