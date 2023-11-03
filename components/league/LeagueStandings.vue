@@ -1,4 +1,17 @@
 <script setup lang="ts">
+    const params = useRoute().params;
+    const config = useRuntimeConfig();
+
+    const {data} = await useAsyncData(() => $fetch(`https://sportscore1.p.rapidapi.com/leagues/${params.league}/seasons`, {
+        method: "GET",
+        headers: {
+            'X-RapidAPI-Key': (config.public.apiKey as string) || "",
+            'X-RapidAPI-Host': 'sportscore1.p.rapidapi.com'
+        },
+        params: {
+            page: 1,
+        },
+    }));
 
 </script>
 

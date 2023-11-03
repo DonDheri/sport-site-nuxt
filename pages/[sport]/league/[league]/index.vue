@@ -23,4 +23,6 @@
 <template>
     
     <CurrentLeague/>
+
+    <TabsBar/>
 </template>

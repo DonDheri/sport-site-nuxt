@@ -3,5 +3,7 @@
 </script>
 
 <template>
+    <CurrentLeague/>
 
+    <TabsBar/>
 </template>
