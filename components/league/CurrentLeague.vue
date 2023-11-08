@@ -5,7 +5,9 @@
     const sports = ref(sportsData);
     const config = useRuntimeConfig();
     const params = useRoute().params;
-    const submit = ref()
+    const select = ref([]);
+    const selectedSeason = ref(null);
+    const option = ref(null);
 
     const whichSport = () => {
         for (let sport of sports.value) {
@@ -25,7 +27,7 @@
     }
     const currentLeague = whichLeague();
     
-    const {data} = await useAsyncData(() => $fetch(`https://sportscore1.p.rapidapi.com/leagues/${params.league}/seasons`, {
+    const {data} = await useAsyncData(() => $fetch(`https://sportscore1.p.rapidapi.com/leagues/${currentLeague.id}/seasons`, {
         method: "GET",
         headers: {
             'X-RapidAPI-Key': (config.public.apiKey as string) || "",
@@ -39,7 +41,15 @@
         return data.value.data;
     });
     
-    console.log(useState());
+    // Function to handle the pick button click
+    const handlePick = () => {
+        if (selectedSeason.value) {
+            return selectedSeason.value;
+        } else {
+            console.error('No season selected');
+        }
+    }
+    
     
 </script>
 <template>
@@ -47,10 +57,10 @@
         <img :src="currentLeague?.logo" alt="logo" class="row-span-3 col-span-12">
         <p class="text-lg col-span-7 row-span-2 my-2">{{ currentLeague?.name_translations.en }}</p>
         <div class="form-control flex flex-row space-x-2">
-            <select class="select select-bordered select-sm col-span-4 row-span-2">
-                <option v-for="season in seasons" :id="season.id">{{ season.slug }}</option>
+            <select ref="select" v-model="selectedSeason" class="select select-bordered select-sm col-span-4 row-span-2">
+                <option v-for="(season, index) in seasons" ref="option" :key="index" :value="season.id">{{ season.slug }}</option>
             </select>
-            <button class="btn btn-sm bg-info-content p-2" ref="submit" type="submit">Pick</button>
+            <NuxtLink :to="`/${currentSport?.slug}/league/${currentLeague?.id}/${selectedSeason}/standings`" class="btn btn-sm bg-info-content p-2">Pick</NuxtLink>
         </div>
     </div>
 

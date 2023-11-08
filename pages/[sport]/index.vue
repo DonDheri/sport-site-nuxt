@@ -72,11 +72,8 @@
 <template>
     <AllSports/>
     <div class="lg:grid lg:grid-cols-12 lg:gap-x-3">
-        <div class="lg:col-span-3 lg:border-r-2 lg:border-neutral">
-            <PopularLeagues class="hidden lg:flex  "
-            :league-name="'some league'"
-            :league-logo="'logo'"
-            />
+        <div class="lg:col-span-2 lg:border-r-2 lg:border-neutral">
+            <PopularLeagues class="hidden lg:flex"/>
         </div>
 
         <div class="lg:col-span-9">

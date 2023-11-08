@@ -27,11 +27,11 @@
 
 <template>
     <div class="flex place-content-center">
-        <div class="tabs overflow-x-scroll overflow-y-hidden flex-nowrap fit-content py-3">
-            <NuxtLink :to="`/${currentSport?.slug}/league/${params.league}/standings`" :class="['tab', 'tab-sm', 'tab-bordered', {tabActive: path.includes('standings') === true}]">Standings</NuxtLink>
-            <NuxtLink :to="`/${currentSport?.slug}/league/${params.league}/fixtures`" :class="['tab', 'tab-sm', 'tab-bordered', {tabActive: path.includes('fixtures') === true}]">Fixtures</NuxtLink>
-            <NuxtLink :to="`/${currentSport?.slug}/league/${params.league}/results`" :class="['tab', 'tab-sm', 'tab-bordered', {tabActive: path.includes('results') === true}]">Results</NuxtLink>
-            <NuxtLink :to="`/${currentSport?.slug}/league/${params.league}/stats`" :class="['tab', 'tab-sm', 'tab-bordered', {tabActive: path.includes('stats') === true}]">Stats</NuxtLink>
+        <div class="tabs overflow-y-hidden flex-nowrap fit-content py-3">
+            <NuxtLink :to="`/${currentSport?.slug}/league/${params.league}/${params.season}/standings`" :class="['tab', 'tab-sm', 'tab-bordered', {tabActive: path.includes('standings') === true}]">Standings</NuxtLink>
+            <NuxtLink :to="`/${currentSport?.slug}/league/${params.league}/${params.season}/fixtures`" :class="['tab', 'tab-sm', 'tab-bordered', {tabActive: path.includes('fixtures') === true}]">Fixtures</NuxtLink>
+            <NuxtLink :to="`/${currentSport?.slug}/league/${params.league}/${params.season}/results`" :class="['tab', 'tab-sm', 'tab-bordered', {tabActive: path.includes('results') === true}]">Results</NuxtLink>
+            <NuxtLink :to="`/${currentSport?.slug}/league/${params.league}/${params.season}/stats`" :class="['tab', 'tab-sm', 'tab-bordered', {tabActive: path.includes('stats') === true}]">Stats</NuxtLink>
         </div>
     </div>
 </template>
