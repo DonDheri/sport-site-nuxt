@@ -5,7 +5,7 @@
 <template>
     <CurrentMatch/>
 
-    <TabsBar/>
+    <MatchTabsBar/>
 
     <H2H/>
 </template>

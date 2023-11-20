@@ -20,7 +20,7 @@
 <template>
     <CurrentMatch/>
 
-    <TabsBar/>
+    <MatchTabsBar/>
 
     <Stats/>
 </template>

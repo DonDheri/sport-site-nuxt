@@ -5,7 +5,7 @@
 <template>
     <CurrentLeague/>
 
-    <TabsBar/>
+    <LeagueTabsBar/>
 
     <LeagueStandings/>
 </template>

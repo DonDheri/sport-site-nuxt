@@ -22,7 +22,7 @@
 <template>
     <CurrentMatch/>
 
-    <TabsBar/>
+    <MatchTabsBar/>
 
     <LineUps/>
 </template>
