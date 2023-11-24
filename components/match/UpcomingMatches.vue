@@ -9,7 +9,7 @@
     const match = ref();
     const params = useRoute().params;
     const config = useRuntimeConfig();
-    const datePicker = ref(null)
+    const datePicker = ref(null);
 
     const whichSport = () => {
         for (let sport of sports.value) {
@@ -60,42 +60,57 @@
         return popGames;
     };
     let sortedGames = sortGames();
-    
-    watch(date, async (newDate) => {
-    const formattedNewDate = formatDate(newDate);
-    const { data: newEvents } = await $fetch(
-      `https://sportscore1.p.rapidapi.com/sports/${currentSport?.id}/events/date/${formattedNewDate}`,
-      {
-        method: "GET",
-        headers: {
-          'X-RapidAPI-Key': (config.public.apiKey as string) || "",
-          'X-RapidAPI-Host': 'sportscore1.p.rapidapi.com'
-        },
-        params: {
-          page: 1,
-        },
-      }
-    );
-    matches.value = newEvents?.data || [];
-  });
 
+    const logger = (someLog) => {
+        console.log(someLog);
+        
+    }
+    
+    const increaseDate = (modelData) => {
+        const increase = modelData.getDate() + 1;
+        
+        modelData.setDate(increase)
+        
+        console.log(modelData);
+        
+        
+        
+        
+        
+        
+        
+    }
+    
+    const decreaseDate = (modelData: Date) => {
+        const decrease = modelData.getDate() - 1;
+
+        return modelData.setDate(decrease)
+        
+        
+    }
+    
+    
     
 </script>
 
 <template>
 
         <div class="lg:col-span-9">
-            <div class="ml-4 mt-2 place-items-center">
-                <div class="mx-3 flex flex-col space-x-6 items-center text-center" >
-                    <p class="uppercase font-bold font-inter">Popular Matches</p>
-                    <VueDatePicker ref="datePicker" v-model="date" :enable-time-picker="false" style="width: 150px;" dark/>
+            <div class="lg:ml-4 mt-2 place-items-center">
+                <div class="mx-3 flex flex-col space-x-6 place-items-center place-content-center text-center" >
+                    <p class="uppercase font-bold text-center">Popular Matches</p>
+                    <div class="flex items-center space-x-1">
+                        <button class="btn btn-sm bg-info-content" type="submit" @click="decreaseDate(date), logger(useModel())"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8.009 8.009 0 0 1-8 8z"/><path d="M13.293 7.293 8.586 12l4.707 4.707 1.414-1.414L11.414 12l3.293-3.293-1.414-1.414z"/></svg></button>
+                        <VueDatePicker ref="datePicker" @decrease-date="" v-model="date" update :enable-time-picker="false" style="width: 150px;" dark/>
+                        <button class="btn btn-sm bg-info-content" type="submit" @click="increaseDate(date)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8.009 8.009 0 0 1-8 8z"/><path d="M9.293 8.707 12.586 12l-3.293 3.293 1.414 1.414L15.414 12l-4.707-4.707-1.414 1.414z"/></svg></button>
+                    </div>
                 </div>
         
                 <div class="divider my-0 mx-2"></div>
             </div>
 
             <div class="carousel uppercase mb-2 overflow-auto space-x-5" ref="matches">
-                <div v-for="game in matches" class="carousel-item">
+                <div v-for="game in sortedGames" class="carousel-item">
                     <NuxtLink
                     :to="`/${currentSport?.slug}/match/${game.id}/lineups`"
                     ref="match"
